@@ -14,24 +14,25 @@ import org.apache.commons.csv.CSVRecord;
 public class dataSetToSQL {
 
 	Connection con = null;
-	
-	
+
 	private void readCSV(String path) {
 		try {
 			// CSV 파일 읽기
-			 BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(path), Charset.forName("GB2312")));
-	            CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withFirstRecordAsHeader());
+			BufferedReader reader = new BufferedReader(
+					new InputStreamReader(new FileInputStream(path), Charset.forName("GB2312")));
+			CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withFirstRecordAsHeader());
 
-			// 데이터베이스 테이블에 데이터 삽입
-			String sql = "INSERT INTO restaurants(rname,address,foodtype,food,resnumber) VALUES (?,?,?,?,?)";
+//			// 데이터베이스 테이블에 데이터 삽입
+			String sql = "INSERT INTO restaurants(rname,caddress,address,foodtype,food,resnumber) VALUES (?,?,?,?,?,?)";
 			PreparedStatement pstmt = con.prepareStatement(sql);
 
 			for (CSVRecord record : csvParser) {
-				String col1 = record.get(4); 
-				String col2 = record.get(7); 
-				String col3 = record.get(17);
-				String col4 = record.get(18); 
-				String col5 = record.get(23); 				
+				String col1 = record.get(4);
+				String col2 = record.get(6); 
+				String col3 = record.get(7); 
+				String col4 = record.get(17);
+				String col5 = record.get(18); 
+				String col6 = record.get(23); 				
 				
 				// 필요한 만큼 열 데이터를 읽어옴
 
@@ -41,8 +42,8 @@ public class dataSetToSQL {
 				pstmt.setString(3, new String(col3.getBytes("GB2312"), "EUC-KR"));
 				pstmt.setString(4, new String(col4.getBytes("GB2312"), "EUC-KR"));
 				pstmt.setString(5, new String(col5.getBytes("GB2312"), "EUC-KR"));
-				
-				// 필요한 만큼 열 데이터를 PreparedStatement에 바인딩
+				pstmt.setString(6, new String(col6.getBytes("GB2312"), "EUC-KR"));
+
 
 				pstmt.executeUpdate(); // 쿼리 실행
 			}
@@ -52,7 +53,9 @@ public class dataSetToSQL {
 			csvParser.close();
 			reader.close();
 			con.close();
-		} catch (Exception e) {
+		} catch (
+
+		Exception e) {
 			e.printStackTrace();
 		}
 	}
