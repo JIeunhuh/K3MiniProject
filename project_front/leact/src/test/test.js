@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import './tt.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const Test= () => {
+  return(
+    <header class="masthead">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex justify-content-center">
+            <div class="text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Grayscale</h1>
+                <h2 class="text-white-50 mx-auto mt-2 mb-5">Test</h2>
+                    <div class="button-container button-m">
+                      <a class="btn btn-primary" href="https://github.com/">BT Test1</a>
+                      <a class="btn btn-primary" href="https://github.com/sou05091/K3MiniProject">BT Test2</a>
+                    </div>
+           </div>
+        </div>
     </div>
-  );
-}
 
-export default App;
+    </header>
+);
+}
+export default Test;
