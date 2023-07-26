@@ -4,16 +4,14 @@ import style from './Food.module.css';
 
 const FoodMain = () => {
     return (
-        <div className="container">
-            <div id={`${style.txtTitle}`}>img 들어갈곳 </div>
-            {/* main page에 클릭할 버튼 2개(search/community) */}
-            <div id={`${style.main2btn}`}>
-                <Link to={`/find/city/gu/kw`} className={`btn btn-primary ${style.mainBut}`}>
-                    Search Food</Link>
-                <Link to={'/comm'} className={`btn btn-primary ${style.mainBut}`}>Community</Link>
-            </div>
+        <div>
+            <img id={`${style.txtTitle}`} src='/image/title.png' alt='main title' />
+            <span>
+                <img id={`${style.mainBackground1}`} src='/image/background1.png'/>
+                <img id={`${style.mainBackground2}`} src='/image/background2.png'/>
+            </span>
         </div>
-
+        
     );
 }
 export default FoodMain;

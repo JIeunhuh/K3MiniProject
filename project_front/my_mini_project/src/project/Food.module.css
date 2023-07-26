@@ -1,18 +1,36 @@
-#txtTitle{
-    display: block;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    height: 90%;
-    width: 60%;
-    padding: 0;
+*{
+    background-color: #FFDF86;
 }
-
+#txtTitle{
+    display: flex;
+    width: 1000px;
+    padding: 0;
+    margin-left:8%;
+}
 .mainBut{
     display: inline-block;
     align-items: center;
     justify-content: center;
-    margin: 5%;
-    padding: 20px;
-    width: 40%;
+    margin: 0;
+    margin-left:5%;
+    padding: 0;
+    width: 20%;
+    height: 0;
+}
+#mainBackground1{
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    margin-left: 5%;
+    width: 50%;
+}
+#mainBackground2{
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    margin-right: 5%;
 }
