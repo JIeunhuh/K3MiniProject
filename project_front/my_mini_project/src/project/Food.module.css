@@ -1,0 +1,18 @@
+#txtTitle{
+    display: block;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+    width: 60%;
+    padding: 0;
+}
+
+.mainBut{
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    margin: 5%;
+    padding: 20px;
+    width: 40%;
+}

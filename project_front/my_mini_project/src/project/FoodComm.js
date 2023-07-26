@@ -1,3 +1,4 @@
+// 게시판 페이지
 import {Link} from 'react-router-dom';
 const FoodComm=()=>{
     return(
