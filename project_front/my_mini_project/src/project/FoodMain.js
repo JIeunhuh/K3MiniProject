@@ -13,8 +13,8 @@ const FoodMain = () => {
                 {/* background img */}
                 <img id={`${style.mainBackground3}`} src='/image/background3.png' />
             </div>
-            {/* background img
-            <img id={`${style.mainBackground4}`} src='/image/background4.png'/> */}
+            {/* background img */}
+            {/* <img id={`${style.mainBackground4}`} src='/image/background4.png'/> */}
             {/* background img */}
             <div className={`${style.container1}`}>     
                 <img id={`${style.mainBackground1}`} src='/image/background1.png' />
