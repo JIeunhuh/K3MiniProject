@@ -16,4 +16,6 @@ public interface BoardService {
 
 	void deleteBoard(board board);
 
+	List<board> searchBoards(String keyword);
+
 }

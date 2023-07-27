@@ -42,4 +42,9 @@ public class BoardServiceImpl implements BoardService {
 	public void deleteBoard(board board) {
 		boardRepo.deleteById(board.getSeq());
 	}
+	
+	@Override
+	public List<board> searchBoards(String keyword){
+		return boardRepo.findByTitleContainingOrContentContaining(keyword, keyword);
+	}
 }
