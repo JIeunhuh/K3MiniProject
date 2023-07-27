@@ -5,6 +5,7 @@ const FoodFind = () => {
     return (
         <div className='container'>
             <div className={`${style.container}`}></div>
+            
         </div>
     );
 }
