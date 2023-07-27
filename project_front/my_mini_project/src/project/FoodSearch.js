@@ -9,10 +9,14 @@ const FoodSearch = () => {
     return (
         <BrowserRouter>
             <main className="container">
-            <FoodNav />
+                {/* 상단의 navigation */}
+                <FoodNav />
                 <Routes>
+                    {/* main page */}
                     <Route path='/' element={<FoodMain />} />
+                    {/* search page */}
                     <Route path='/find/:city/:gu/:kw' element={<FoodFind />} />
+                    {/* community page */}
                     <Route path='/comm' element={<FoodComm />} />
                 </Routes>
             </main>

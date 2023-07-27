@@ -1,36 +1,85 @@
 *{
     background-color: #FFDF86;
 }
-#txtTitle{
+
+#nav{
     display: flex;
-    width: 1000px;
-    padding: 0;
-    margin-left:8%;
-}
-.mainBut{
-    display: inline-block;
+    margin-top: 5%;
     align-items: center;
     justify-content: center;
-    margin: 0;
-    margin-left:5%;
-    padding: 0;
-    width: 20%;
-    height: 0;
 }
-#mainBackground1{
-    display: inline-block;
+
+#txtTitle {
+    width: 900px;
+    padding: 0;
+}
+
+.container { 
+    position: relative;
+    margin: 0;
+    display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0;
-    padding: 0;
-    margin-left: 5%;
-    width: 50%;
 }
-#mainBackground2{
-    display: inline-block;
+
+.container1 {
+    
+    margin-top: 20%;
+    display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#mainBackground3 {
+    /* transparent : 색상설정 안함(투명) */
+    background-color: transparent;
+    display: flex;
+    position: absolute;
+    margin-top: 30%;
+    margin-left: 70%;
+    height: 550px;
+    padding: 0;
+    z-index: 1;
+}
+#mainBackground4{
+    background-color: transparent;
+    margin-left:0;
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    
+
+    
+}
+
+#mainBackground1 {
+    /* transparent : 색상설정 안함(투명) */
+    background-color: transparent;
+    position: absolute;
     margin: 0;
+    margin-right: 35%;
+    padding: 0;
+    width: 45%;
+    z-index: 1;
+}
+
+#mainBackground2 {
+    /* transparent : 색상설정 안함(투명) */
+    background-color: transparent;
+    position: absolute;
+    margin-left: 35%;
     padding: 0;
     margin-right: 5%;
+    width: 45%;
+}
+
+/* 769px부터 1024px 사이의 화면 크기일 때 적용되는 스타일 */
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
+    body{
+        color: #FEEBB6;
+    }
+@media screen and (max-width: 768px) {
+    /* 768px 이하의 화면 크기일 때 적용되는 스타일 */
 }
