@@ -15,7 +15,7 @@ const FoodSearch = () => {
                     {/* main page */}
                     <Route path='/' element={<FoodMain />} />
                     {/* search page */}
-                    <Route path='/find/:city/:gu/:kw' element={<FoodFind />} />
+                    <Route path='/find' element={<FoodFind />} />
                     {/* community page */}
                     <Route path='/comm' element={<FoodComm />} />
                 </Routes>
