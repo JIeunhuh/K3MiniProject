@@ -11,6 +11,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import edu.pnu.domain.Member;
 import edu.pnu.service.MemberService;
 
+//api명세서 정리되어 있음
 @SessionAttributes("member")
 @Controller
 public class LoginController {

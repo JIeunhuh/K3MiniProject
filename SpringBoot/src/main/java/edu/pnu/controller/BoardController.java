@@ -16,6 +16,7 @@ import edu.pnu.board.board;
 import edu.pnu.domain.Member;
 import edu.pnu.service.BoardService;
 
+// API명세서에 정리되어있음
 @SessionAttributes("member")
 @Controller
 public class BoardController {

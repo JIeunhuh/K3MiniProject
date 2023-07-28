@@ -1,6 +1,6 @@
 package edu.pnu.controller;
 
-
+//예외처리 웹사이트 안만들거면 필요없음
 import java.sql.SQLException;
 
 import org.springframework.stereotype.Controller;
