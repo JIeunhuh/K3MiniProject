@@ -1,6 +1,19 @@
 import './tt.css'
 
 const Test= () => {
+    // useState 사용
+    // const [locations, setLocations] = useState([]);
+    // const getData = () => {
+    //             let url = 'http://10.125.121.176:8080/restaurants';
+    
+    //             //fetch()
+    //             fetch(url)
+    //                 .then((resp) => resp.json())
+    //                 .then((data) => setLocations(data))
+    //                 .catch((err) => console.log(err));
+    //         }
+    // console.log(locations);
+    // getData();
   return(
     <header class="masthead">
     <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
@@ -15,7 +28,6 @@ const Test= () => {
            </div>
         </div>
     </div>
-
     </header>
 );
 }

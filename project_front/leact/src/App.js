@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import FoodSearch from './project/FoodSearch';
 import Test from './test/test'
+import Error from './test/error'
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <Test />
+    // <Test />
+    <Error />
+    // <FoodSearch/>
   );
 }
 
