@@ -1,5 +1,7 @@
 package edu.pnu.service;
 
+import java.util.List;
+
 import java.util.Optional;
 
 
@@ -8,7 +10,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import edu.pnu.domain.Member;
+import edu.pnu.persistence.CityRepository;
 import edu.pnu.persistence.MemberRepository;
+import edu.pnu.restaurant.Restaurant;
 
 @Service
 public class MemberServiceImpl implements MemberService{
@@ -35,5 +39,15 @@ public class MemberServiceImpl implements MemberService{
 		member.setRole("ROLE_USER");
 		memberRepo.save(member);
 	}
+	
+    @Autowired
+    public void MemberService(MemberRepository memberRepo) {
+        this.memberRepo = memberRepo;
+    }
+
+    public List<Member> getAllMembers() {
+        return memberRepo.findAll();
+    }
+
 	
 }
