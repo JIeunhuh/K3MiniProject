@@ -165,3 +165,11 @@
 .button-m .btn {
   margin: 10px;
 }
+
+.testbackimg{
+  background-image: url("./assets/error.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 1000px; /* 이미지의 높이를 원하는 크기로 조절 */
+}
