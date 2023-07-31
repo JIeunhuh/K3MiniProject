@@ -1,8 +1,15 @@
 // 게시판 페이지
-import {Link} from 'react-router-dom';
-const FoodComm=()=>{
-    return(
-        <h2>hi</h2>
+import { Link } from 'react-router-dom';
+// community 상단에는 login / join us 구현하기
+
+const FoodComm = () => {
+
+
+    return (
+        <div>
+            <Link to={'/join'}>Join us</Link>
+            <Link to={'/login'}>Login</Link>
+        </div>
     );
 }
 export default FoodComm;

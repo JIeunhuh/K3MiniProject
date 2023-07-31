@@ -3,13 +3,14 @@
 } */
 
 /* home,search,coummunity */
-#nav{
+#nav {
     position: relative;
     display: flex;
     margin-top: 5%;
     align-items: center;
     justify-content: center;
 }
+
 /* main title */
 #txtTitle {
     display: flex;
@@ -17,11 +18,11 @@
     padding: 0;
 }
 
-.mainHome{
+.mainHome {
     display: block;
 }
 
-.container { 
+.container {
     position: relative;
     margin: 0;
     display: flex;
@@ -29,7 +30,7 @@
     justify-content: center;
 }
 
-.container1 { 
+.container1 {
     margin-top: 20%;
     display: flex;
     align-items: center;
@@ -47,14 +48,15 @@
     padding: 0;
     z-index: 1;
 }
-#mainBackground4{
+
+#mainBackground4 {
     background-color: transparent;
-    margin-left:0;
+    margin-left: 0;
     display: flex;
     align-items: flex-end;
     position: absolute;
     left: 0;
-    bottom: 0;   
+    bottom: 0;
 }
 
 #mainBackground1 {
@@ -78,23 +80,29 @@
     width: 45%;
 }
 
-/* search - map */
-.dropDown{
+/* search - selectBox, txt, submit  */
+.dropDown {
     display: flex;
     margin-top: 7%;
 }
 
-.label{
+.label {
     width: 20%;
     margin-right: 3%;
 }
 
-.inputTxt{
-    width: 130% ;
-    height:41%;
+.inputTxt {
+    width: 130%;
+    height: 41%;
 }
 
-.kakaoMap{
+
+/* search - map */
+:not(.kakaoMap) {
+    background-color: #FFDF86;
+}
+
+.kakaoMap {
     position: absolute;
     display: flex;
     margin-top: 5%;
@@ -106,7 +114,8 @@
 
 /* 769px부터 1024px 사이의 화면 크기일 때 적용되는 스타일 */
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
-    /* body{
+
+/* body{
         color: #FEEBB6;
     } */
 @media screen and (max-width: 768px) {

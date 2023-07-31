@@ -1,9 +1,10 @@
 // 메인 홈페이지
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import style from './Food.module.css';
 
 const FoodMain = () => {
-
+    
     return (
 
         <div className={`${style.mainHome}`}>
