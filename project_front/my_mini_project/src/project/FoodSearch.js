@@ -14,7 +14,6 @@ const FoodSearch = () => {
     // props할 url : FoodFind
     const [locations, setLocations] = useState([]);
     
-
     useEffect(() => {//data fetch
         const getData = (event) => {
             // event.preventDefault();

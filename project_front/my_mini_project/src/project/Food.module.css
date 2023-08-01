@@ -98,9 +98,6 @@
 
 
 /* search - map */
-:not(.kakaoMap) {
-    background-color: #FFDF86;
-}
 
 .kakaoMap {
     position: absolute;
@@ -110,6 +107,19 @@
     height: 550px;
     border: 0.5px solid #ccc;
     z-index: 1;
+}
+
+.mapAndInfo{
+    display: flex;
+
+}
+.info{
+    position: absolute;
+    right: 0;
+    align-items: center;
+    justify-content: left;
+    margin-right: 20%;
+
 }
 
 /* 769px부터 1024px 사이의 화면 크기일 때 적용되는 스타일 */
