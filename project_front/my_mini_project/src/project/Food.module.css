@@ -1,18 +1,21 @@
-/* *{  
+*{ 
     background-color: #FFDF86;
-} */
+    font-family: 'Orbit', sans-serif;
+}
 
 /* home,search,coummunity */
 #nav {
     position: relative;
     display: flex;
-    margin-top: 5%;
+    margin-top: 3%;
+    margin-bottom: 5%;
     align-items: center;
     justify-content: center;
 }
 
 /* main title */
 #txtTitle {
+    position: relative;
     display: flex;
     width: 900px;
     padding: 0;
@@ -21,7 +24,6 @@
 .mainHome {
     display: block;
 }
-
 .container {
     position: relative;
     margin: 0;
@@ -81,44 +83,55 @@
 }
 
 /* search - selectBox, txt, submit  */
-.dropDown {
+.container2 { 
+    display: inline-block;
+}
+
+ .dropDown {
     display: flex;
-    margin-top: 7%;
 }
 
 .label {
     width: 20%;
     margin-right: 3%;
+    text-align: left;
 }
 
 .inputTxt {
     width: 130%;
     height: 41%;
-}
+} 
 
+.clickBtn{
+    margin-left: 6.5%;
+    margin-top: 2.7%;
+}
 
 /* search - map */
 
 .kakaoMap {
-    position: absolute;
+    position: relative;
     display: flex;
-    margin-top: 5%;
+    margin-top: 8%;
     width: 650px;
     height: 550px;
     border: 0.5px solid #ccc;
-    z-index: 1;
+    margin-right: 5%;
+    margin-bottom: 5%;
+
 }
 
 .mapAndInfo{
     display: flex;
-
 }
+
+/* searchList */
 .info{
-    position: absolute;
+    position: relative;
     right: 0;
-    align-items: center;
-    justify-content: left;
-    margin-right: 20%;
+    margin-top: 8%;
+    text-align: left;
+    margin-bottom: 5%;
 
 }
 
