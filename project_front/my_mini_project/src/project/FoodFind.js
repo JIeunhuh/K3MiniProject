@@ -88,7 +88,7 @@ const FoodFind = ({ locations }) => {
         //구를 선택했을때 url fetch 해서 가져오기
         const getData = () => {
             // event.preventDefault();
-            let url = 'http://10.125.121.176:8080/restaurants';
+            let url = 's';
             // useRef의 current value값을 가져옴
             url = url + `/${city}`;
             url = url + `/${chooseCity_gu}`;
