@@ -19,7 +19,6 @@ public class MemberServiceImpl implements MemberService{
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
-	
 	@Override
 	public Member getMember(Member member) {
 		Optional<Member> findMember = memberRepo.findById(member.getId());
@@ -28,6 +27,7 @@ public class MemberServiceImpl implements MemberService{
 		else return null;
 	}
 	
+	// setEnabled이 False면 로그인 안됨!!
 	@Override
 	public void createMember(Member member) {
 		member.setId(member.getId());
@@ -35,6 +35,7 @@ public class MemberServiceImpl implements MemberService{
 		member.setPassword(encodedPassword);
 		member.setName(member.getName());
 		member.setRole("ROLE_USER");
+		member.setEnabled(true);
 		memberRepo.save(member);
 	}
 	
@@ -47,9 +48,5 @@ public class MemberServiceImpl implements MemberService{
     public List<Member> getAllMembers() {
         return memberRepo.findAll();
     }
-
-
-
-
 	
 }

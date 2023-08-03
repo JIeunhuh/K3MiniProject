@@ -45,17 +45,18 @@ public class Member {
 		return list;
 		*/
 	}
+	
     // 비밀번호를 BCrypt로 해시하여 저장하는 메소드
-    public void setPassword(String password) {
-        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        this.password = passwordEncoder.encode(password);
-    }
+//    public void setPassword(String password) {
+//        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+//        this.password = passwordEncoder.encode(password);
+//    }
 
     // 비밀번호 일치 여부를 확인하는 메소드
-    public boolean isPasswordMatch(String rawPassword) {
-//        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-//        return passwordEncoder.matches(rawPassword, this.password);
-        return new BCryptPasswordEncoder().matches(rawPassword, this.password);
-        
-    }
+//    public boolean isPasswordMatch(String rawPassword) {
+////        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+////        return passwordEncoder.matches(rawPassword, this.password);
+//        return new BCryptPasswordEncoder().matches(rawPassword, this.password);
+//        
+//    }
 }
