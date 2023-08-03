@@ -3,6 +3,7 @@ import style from './Food.module.css';
 import { useEffect, useState, useRef } from 'react';
 import Mymap from './Mymap';
 import SearchList from './SearchList';
+import FoodNav from './FoodNav';
 const FoodFind = ({ locations }) => {
 
     // restaurant data 를 위한 상태
@@ -123,45 +124,49 @@ const FoodFind = ({ locations }) => {
 
 
     return (
-        <div className={`nes-container is-rounded ${style.container2} container`}>
-            <div className={`${style.dropDown}`}>
-                {/* select '광역시', '구' */}
-                <div className={`${style.label}`}>
-                    <label htmlFor="error_select">광역시/도를 선택하세요</label>
-                    <div className='nes-select is-error' >
-                        <select required id="error_select" onChange={checkCity} ref={selectCity}>
-                            <option defaultValue='' disabled hidden>Select...</option>
-                            {cate}
-                        </select>
+        <div className='container'>
+            {/* 상단의 navigation */}
+            <FoodNav />
+            <div className={`nes-container is-rounded ${style.container2} container`}>
+                <div className={`${style.dropDown}`}>
+                    {/* select '광역시', '구' */}
+                    <div className={`${style.label}`}>
+                        <label htmlFor="error_select">광역시/도를 선택하세요</label>
+                        <div className='nes-select is-error' >
+                            <select required id="error_select" onChange={checkCity} ref={selectCity}>
+                                <option defaultValue='' disabled hidden>Select...</option>
+                                {cate}
+                            </select>
+                        </div>
+                    </div>
+                    <div className={`${style.label}`}>
+                        <label htmlFor="error_select">구를 선택하세요</label>
+                        <div className="nes-select is-error">
+                            {/* option 에다가 이벤트 핸들링 걸면 어뜩하늬ㅢㅣ */}
+                            <select required id="error_select" onChange={checkCity_gu} ref={selectCity_gu}>
+                                <option defaultValue='' disabled hidden >Select...</option>
+                                {cat_gu}
+                            </select>
+                        </div>
+                    </div>
+                    {/* search keyword */}
+                    <div className={`${style.label}`}>
+                        <label htmlFor="textarea_field">Insert keyword</label>
+                        <textarea id="textarea_field" value={searchKw} onChange={(e) => setSearchKw(e.target.value)} className={`nes-textarea ${style.inputTxt}`}></textarea>
+                    </div>
+
+                    {/* 검색 버튼 */}
+                    <div className={`${style.label} ${style.clickBtn}`}>
+                        <button type='button' className={`nes-btn is-error ${style.sarchBtn}`} onClick={searchFood}>Go</button>
                     </div>
                 </div>
-                <div className={`${style.label}`}>
-                    <label htmlFor="error_select">구를 선택하세요</label>
-                    <div className="nes-select is-error">
-                        {/* option 에다가 이벤트 핸들링 걸면 어뜩하늬ㅢㅣ */}
-                        <select required id="error_select" onChange={checkCity_gu} ref={selectCity_gu}>
-                            <option defaultValue='' disabled hidden >Select...</option>
-                            {cat_gu}
-                        </select>
-                    </div>
+
+                {/* 지도 ;*/}
+                <div className={`${style.mapAndInfo}`}>
+                    {searchRes && <Mymap searchRes={searchRes} />}
+                    {/* 검색 결과 표시 ;*/}
+                    {searchRes && <SearchList searchRes={searchRes} />}
                 </div>
-                {/* search keyword */}
-                <div className={`${style.label}`}>
-                    <label htmlFor="textarea_field">Insert keyword</label>
-                    <textarea id="textarea_field" value={searchKw} onChange={(e) => setSearchKw(e.target.value)} className={`nes-textarea ${style.inputTxt}`}></textarea>
-                </div>
-             
-                {/* 검색 버튼 */}
-                <div className={`${style.label} ${style.clickBtn}`}>
-                    <button type='button' className={`nes-btn is-error ${style.sarchBtn}`} onClick={searchFood}>Go</button>
-                </div>
-            </div>
-           
-            {/* 지도 ;*/}
-            <div className={`${style.mapAndInfo}`}>
-                {searchRes && <Mymap searchRes={searchRes} />}
-                {/* 검색 결과 표시 ;*/}
-                {searchRes && <SearchList searchRes={searchRes} />}
             </div>
         </div>
     );

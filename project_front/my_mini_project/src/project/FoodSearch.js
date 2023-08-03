@@ -4,16 +4,18 @@ import FoodMain from "./FoodMain";
 import FoodFind from "./FoodFind";
 import FoodComm from "./FoodComm";
 import FoodNav from "./FoodNav";
-import { useState, useEffect } from 'react';
-import Joinus from "./Joinus";
+import Joinus from './Joinus';
 import Login from "./Login";
+import { useState, useEffect } from 'react';
+
+
 
 const FoodSearch = () => {
 
     // useState 사용
     // props할 url : FoodFind
     const [locations, setLocations] = useState([]);
-    
+
     useEffect(() => {//data fetch
         const getData = (event) => {
             // event.preventDefault();
@@ -30,21 +32,21 @@ const FoodSearch = () => {
 
     return (
         <BrowserRouter>
-            <main className="container">
-                {/* 상단의 navigation */}
-                <FoodNav />
+            <main>
                 <Routes>
                     {/* main page */}
                     <Route path='/' element={<FoodMain />} />
                     {/* search page */}
                     {/* probs 이용해서 FoodFind component로 useState 변수 locations 보내기 */}
-                    <Route path='/find' element={locations && <FoodFind locations = {locations} />} />
+                    <Route path='/find' element={locations && <FoodFind locations={locations} />} />
                     {/* community page */}
                     <Route path='/comm' element={<FoodComm />} />
-                    <Route path='/login' element={<Login />} />
-                    <Route path='/join' element={<Joinus />} />
                 </Routes>
             </main>
+            <Routes>
+                <Route path="/joinus" element={<Joinus />} />
+                <Route path="/login" element={<Login />} />
+            </Routes>
         </BrowserRouter>
     );
 };

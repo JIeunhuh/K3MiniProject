@@ -7,7 +7,7 @@ const FoodComm = () => {
 
     return (
         <div>
-            <Link to={'/join'}>Join us</Link>
+            <Link to={'/joinus'}>Join us</Link>
             <Link to={'/login'}>Login</Link>
         </div>
     );

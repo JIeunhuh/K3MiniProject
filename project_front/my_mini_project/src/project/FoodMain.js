@@ -2,12 +2,15 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import style from './Food.module.css';
+import FoodNav from './FoodNav';
 
 const FoodMain = () => {
-    
+
     return (
 
-        <div className={`${style.mainHome}`}>
+        <div className={`${style.mainHome} container`}>
+            {/* 상단의 navigation */}
+            <FoodNav />
             <div className={`${style.container}`}>
                 {/* main title */}
                 <img id={`${style.txtTitle}`} src='/image/title.png' alt='main title' />
