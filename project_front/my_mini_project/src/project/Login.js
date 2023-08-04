@@ -1,5 +1,4 @@
 //login page
-import axios from 'axios';
 import { async } from 'q';
 import { useEffect, useState } from "react";
 import style from './Login.module.css';
@@ -9,6 +8,7 @@ const Login = () => {
     // id / pw 상태관리
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
+    // const [name, setName] = useState('');
 
     // // 로그인 db url 가져오기
     // const login = async (id, password) => {
@@ -24,33 +24,27 @@ const Login = () => {
     //         throw new Error('Failed Login'); //로그인 실패 시 에러 처리
     //     }
 
-    
+
 
     return (
-        <div>
-            <h2>로그인</h2>
-            <p style={{ color: 'red' }}></p>
-            <form>
-                <div>
-                    <label>아이디:</label>
-                    <input
-                        type="text"
-                        value={id}
-                        // onChange={(e) => setId(e.target.value)}
-                    />
+        <div className={`${style.container}`}>
+            <form className={`${style.container2}`}>
+                <div className={`nes-field ${style.inputTxt}`}>
+                    <p className={`${style.putText}`}>Id</p>
+                    <input type="text" id="name_field" value={id} onChange={(e) => setId(e.target.value)} className="nes-input"></input>
                 </div>
-                <div>
-                    <label>비밀번호:</label>
-                    <input
-                        type="password"
-                        value={password}
-                        // onChange={(e) => setPassword(e.target.value)}
-                    />
+                <div className={`nes-field ${style.inputTxt}`}>
+                    <p className={`${style.putText}`}>Password</p>
+                    <input type="password" id="name_field" value={password} onChange={(e) => setPassword(e.target.value)} className="nes-input" />
                 </div>
-                <button type="button" >
-                    로그인
-                </button>
+                <button type="button" className={`${style.submitBtn}`}>Sign in !</button>
             </form>
+            <div className={`${style.loginImg}`}>
+                <img src='/images/loginCircle.svg' />
+                <h1 className={`${style.signUpcom} ${style.signUpcom1}`}>
+                    Enjoy your <br /> gourmet life !
+                </h1>
+            </div>
         </div>
     );
 }

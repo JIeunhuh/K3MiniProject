@@ -64,19 +64,21 @@
 
 /* joinus - 회원가입 창 */
 
-.container2{
+.container2 {
     display: inline-block;
     align-items: center;
     justify-content: center;
-    margin: 15%;
+    margin: 7%;
     margin-top: 23%;
     margin-left: 30%;
 }
-.inputTxt{
+
+.inputTxt {
     margin-top: 7%;
     margin-right: 8%;
     width: 588px;
 }
+
 .putText {
     color: #FCA9F0;
     font-size: 22px;
@@ -109,3 +111,15 @@
     /* 그림자 효과 */
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
+
+/* login */
+.loginImg{
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.signUpcom1{
+    margin-top: 5%;
+}
+

@@ -2,7 +2,8 @@
 import { MapTypeControl } from 'react-kakao-maps-sdk';
 import style from './Login.module.css';
 import { useEffect, useState } from 'react';
-import { Link, json } from 'react-router-dom';
+//useHistory
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 const Joinus = () => {
     // 회원가입 상태 불러오기
@@ -10,6 +11,8 @@ const Joinus = () => {
     const [lastName, setLastName] = useState('');
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
+
+    const history = useNavigate();
 
     const handleSubmit = (e) =>{
         e.preventDefault();
@@ -25,7 +28,11 @@ const Joinus = () => {
         let url = 'http://10.125.121.176:8080/register';
         
         axios.post(url, data)
-            .then(() => alert('회원가입을 완료하셨습니다.'))
+            .then(() => {
+                alert('회원가입을 완료하셨습니다.');
+                // 회원가입이 완료되면 로그인 페이지로 이동
+                history('/login');
+        })
             .catch(()=> alert('회원가입이 완료되지 않았습니다.'));
     };
 
@@ -72,6 +79,7 @@ const Joinus = () => {
                     <p className={`${style.putText}`}>Password</p>
                     <input type="password" id="name_field" value={password} onChange={(e)=>setPassword(e.target.value)} className="nes-input" />
                 </div>
+                {/* id, pw, name 입력안하면 입력하라는 창 뜨게 하기 */}
                 <button type="button" onClick={handleSubmit} className={`${style.submitBtn}`}>Sign me up !</button>
             </form>
         </div>
