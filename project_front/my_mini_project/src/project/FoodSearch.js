@@ -3,7 +3,6 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import FoodMain from "./FoodMain";
 import FoodFind from "./FoodFind";
 import FoodComm from "./FoodComm";
-import FoodNav from "./FoodNav";
 import Joinus from './Joinus';
 import Login from "./Login";
 import { useState, useEffect } from 'react';

@@ -1,5 +1,5 @@
-*{ 
-    background-color: #FFDF86;
+* {
+    /* background-color: #FFDF86; */
     font-family: 'Orbit', sans-serif;
 }
 
@@ -24,6 +24,7 @@
 .mainHome {
     display: block;
 }
+
 .container {
     position: relative;
     margin: 0;
@@ -83,11 +84,11 @@
 }
 
 /* search - selectBox, txt, submit  */
-.container2 { 
+.container2 {
     display: inline-block;
 }
 
- .dropDown {
+.dropDown {
     display: flex;
 }
 
@@ -100,9 +101,9 @@
 .inputTxt {
     width: 130%;
     height: 41%;
-} 
+}
 
-.clickBtn{
+.clickBtn {
     margin-left: 6.5%;
     margin-top: 2.7%;
 }
@@ -118,15 +119,18 @@
     border: 0.5px solid #ccc;
     margin-right: 5%;
     margin-bottom: 5%;
+    background-color: white;
+    z-index: 1;
 
 }
 
-.mapAndInfo{
+
+.mapAndInfo {
     display: flex;
 }
 
 /* searchList */
-.info{
+.info {
     position: relative;
     right: 0;
     margin-top: 8%;

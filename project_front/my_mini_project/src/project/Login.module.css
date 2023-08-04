@@ -113,13 +113,27 @@
 }
 
 /* login */
+
+.loginContainer{
+    margin-top: 40%;
+    margin-left : 55%
+}
+
 .loginImg{
     display: flex;
     position: absolute;
     right: 0;
     bottom: 0;
+    background-color: transparent;
 }
 .signUpcom1{
-    margin-top: 5%;
+    margin-top: 18%;
+    margin-left: 15%;
 }
 
+/* FoodComm */
+
+.logoutBtn{
+    background-color: transparent;
+    border: 0;
+}
