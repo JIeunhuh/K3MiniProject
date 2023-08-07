@@ -34,6 +34,7 @@ public class MemberServiceImpl implements MemberService{
 		String encodedPassword = passwordEncoder.encode(member.getPassword());
 		member.setPassword(encodedPassword);
 		member.setName(member.getName());
+		member.setNickname(member.getNickname());
 		member.setRole("ROLE_USER");
 		member.setEnabled(true);
 		memberRepo.save(member);

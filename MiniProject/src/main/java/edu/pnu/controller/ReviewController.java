@@ -1,5 +1,7 @@
 package edu.pnu.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.data.domain.Page;
@@ -7,6 +9,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,5 +38,11 @@ public class ReviewController {
         Review createdReview = reviewService.createReview(review);
         return ResponseEntity.ok(createdReview);
     }
-	
+    
+    @GetMapping("/getReviewList/{id}")
+    public List<Review> getReviewList(@PathVariable int id) {
+        // 해당 레스토랑의 리뷰 목록을 조회하는 로직을 작성합니다.
+        List<Review> restaurantReviews = reviewService.getReviewByrestId(id);
+        return restaurantReviews;
+    }
 }

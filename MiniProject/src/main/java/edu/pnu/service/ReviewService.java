@@ -1,6 +1,8 @@
 package edu.pnu.service;
 
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,6 +20,12 @@ public class ReviewService {
 	
 	public Page<Review> getReviewList(Pageable pageable){
 		return reviewRepo.findAll(pageable);
+	}
+	
+	public List<Review> getReviewByrestId(Integer restId){
+		return reviewRepo.findAll().stream()
+				.filter(r -> r.getRestId().equals(restId))
+				.collect(Collectors.toList());
 	}
 
     public Review createReview(Review review) {

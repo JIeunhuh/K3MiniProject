@@ -35,5 +35,4 @@ public class BoardController {
         Board createdBoard = boardService.createBoard(board);
         return ResponseEntity.ok(createdBoard);
     }
-	
 }

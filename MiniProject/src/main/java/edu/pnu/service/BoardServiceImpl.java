@@ -26,12 +26,11 @@ public class BoardServiceImpl implements BoardService {
 	public Board createBoard(Board board) {
         Board newBoard = new Board();
         newBoard.setTitle(board.getTitle());
-        newBoard.setMemberId(board.getMemberId());
+        newBoard.setNickname(board.getNickname());
         newBoard.setContent(board.getContent());
-        newBoard.setReview(board.getReview());
         newBoard.setCreateDate(new Date());
         
-        //현재 로그인한 사용자의 정보를 가져와서 memberId로 저장
+        //현재 로그인한 사용자의 정보를 가져와서 nickname 저장
 //        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 //        String loggedInUser = authentication.getName();
 //        newBoard.setMemberId(loggedInUser);

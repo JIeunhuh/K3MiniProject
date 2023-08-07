@@ -28,10 +28,8 @@ public class Board {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long seq;
 	private String title;
-	private String memberId;
-	private Integer restId;
+	private String nickname;
 	private String content;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createDate;
-	private Long review;
 }

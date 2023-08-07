@@ -2,14 +2,11 @@ package edu.pnu.domain;
 
 import java.util.Collection;
 
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -30,6 +27,7 @@ public class Member {
 	private String id;
 	private String password;
 	private String name;
+	private String nickname;
 	private String role;
 	private boolean enabled;
 	public Collection<? extends GrantedAuthority> getAuthorities() {		
