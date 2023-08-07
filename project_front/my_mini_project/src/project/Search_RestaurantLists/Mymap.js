@@ -2,7 +2,7 @@
 // react-kakao-maps-sdk
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 import { useState, useEffect, useRef } from 'react';
-import style from './Food.module.css';
+import style from '../Food.module.css';
 
 const Mymap = ({ searchRes }) => {
     // 위치 표시하기 위한 useRef
@@ -44,17 +44,6 @@ const Mymap = ({ searchRes }) => {
             });
         });
 
-        //
-        // Promise.all(prevMarkers.map(marker => new Promise((resolve)=>{
-        //     marker.setMap(null); // 이전 마커 삭제
-        //     window.kakao.maps.event.addListener(marker, 'remove', ()=> resolve());
-        // }))).then(()=>{
-        //     const marker = new window.kakao.maps.Marker({
-        //         position : coords
-        //     });
-        //     marker.setMap(mapRef.current);
-        //     mapRef.current.markers = [marker]
-        // });
         //마커들을 상태에 저장하고 지도에 추가
         setMarkers(updateMark);
         // updateMark.forEach((marker) => marker.setMap(saveMarker));
@@ -89,11 +78,11 @@ const Mymap = ({ searchRes }) => {
                 center={state.center}
                 style={{
                     // 지도의 크기
-                    width: "650px",
-                    height: "550px",
+                    width: "550px",
+                    height: "450px",
                     display: "flex",
                 }}
-                level={3} // 지도의 확대 레벨
+                level={2} // 지도의 확대 레벨
             >
                 <MapMarker position={{ lat: state.center?.lat, lng: state.center?.lng }} />
             </Map>

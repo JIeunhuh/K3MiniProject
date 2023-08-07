@@ -1,9 +1,9 @@
-import style from './Food.module.css';
+import style from '../Food.module.css';
 // 검색 페이지 
 import { useEffect, useState, useRef } from 'react';
 import Mymap from './Mymap';
 import SearchList from './SearchList';
-import FoodNav from './FoodNav';
+import FoodNav from '../FoodNav';
 const FoodFind = ({ locations }) => {
 
     // restaurant data 를 위한 상태

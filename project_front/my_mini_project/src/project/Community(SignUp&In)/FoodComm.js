@@ -1,21 +1,23 @@
 // 게시판 페이지
-import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
+import { isLoggedInState } from '../LoginRecoil';
+
 import style from './Login.module.css';
 // community 상단에는 login / join us 구현하기
 const FoodComm = () => {
 
     // session에 토큰값이 없는걸 초기값으로 잡음
-    const [isLoggedIn, setIsLoggedIn] = useState(!sessionStorage.getItem('jwt'));
+    const [isLoggedIn, setIsLoggedIn] = useRecoilState(isLoggedInState);
 
     // 세션에 토큰없으면 로그인 링크 뜨게
     const handleLogin = () => {
-        setIsLoggedIn(!sessionStorage.getItem('jwt'));
+        setIsLoggedIn(false);
     }
 
     // 세션에 토큰 있으면 로그인 상태이므로, 로그아웃 링크 뜨게 만듦! 
     const handleLogout = () => {
-        setIsLoggedIn(sessionStorage.getItem('jwt'));
+        setIsLoggedIn(true);
         sessionStorage.removeItem('jwt');
         alert('logout이 완료되었습니다.');
     }

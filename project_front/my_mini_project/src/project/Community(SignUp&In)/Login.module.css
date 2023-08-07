@@ -68,8 +68,8 @@
     display: inline-block;
     align-items: center;
     justify-content: center;
-    margin: 7%;
-    margin-top: 23%;
+    margin: 5%;
+    margin-top: 13%;
     margin-left: 30%;
 }
 
@@ -125,6 +125,7 @@
     right: 0;
     bottom: 0;
     background-color: transparent;
+    z-index: -1;
 }
 .signUpcom1{
     margin-top: 18%;

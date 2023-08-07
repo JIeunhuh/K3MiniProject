@@ -114,13 +114,13 @@
     position: relative;
     display: flex;
     margin-top: 8%;
-    width: 650px;
-    height: 550px;
+    width: 550px;
+    height: 450px;
     border: 0.5px solid #ccc;
     margin-right: 5%;
     margin-bottom: 5%;
     background-color: white;
-    z-index: 1;
+   
 
 }
 

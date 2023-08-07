@@ -1,10 +1,10 @@
 // 라우트 지정
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import FoodMain from "./FoodMain";
-import FoodFind from "./FoodFind";
-import FoodComm from "./FoodComm";
-import Joinus from './Joinus';
-import Login from "./Login";
+import FoodFind from "./Search_RestaurantLists/FoodFind";
+import FoodComm from "./Community(SignUp&In)/FoodComm";
+import Joinus from './Community(SignUp&In)/Joinus';
+import Login from "./Community(SignUp&In)/Login";
 import { useState, useEffect } from 'react';
 
 

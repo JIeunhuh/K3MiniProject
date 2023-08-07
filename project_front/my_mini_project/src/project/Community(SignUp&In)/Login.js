@@ -1,15 +1,17 @@
 //login page
 import axios from "axios";
 import { useCookies } from "react-cookie";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useRecoilState } from "recoil";
+import { idState, passwordState } from "../LoginRecoil";
 import style from './Login.module.css';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     // modal component 이용해서 로그인 구현
     // id / pw 상태관리
-    const [id, setId] = useState('');
-    const [password, setPassword] = useState('');
+    const [id, setId] = useRecoilState(idState);
+    const [password, setPassword] = useRecoilState(passwordState);
     // const [name, setName] = useState('');
     const history = useNavigate();
 
@@ -29,10 +31,11 @@ const Login = () => {
             .then((response) => {
                 // token 가져오기
                 const jwtToken = response.headers.get('Authorization');
+                console.log('resheader',response);
                 if (jwtToken != null) {
                     alert('로그인 완료');
                     // sessionStorage에 토큰 저장
-                    sessionStorage.setItem('jwt',jwtToken);
+                    sessionStorage.setItem('jwt', jwtToken);
                     setIsAuth(true);
                     // 회원가입이 완료되면 로그인 페이지로 이동
                     history('/comm');

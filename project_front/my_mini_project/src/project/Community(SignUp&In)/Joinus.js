@@ -11,29 +11,31 @@ const Joinus = () => {
     const [lastName, setLastName] = useState('');
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
+    const [nickname, setNickname] = useState('');
 
     const history = useNavigate();
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = (e) => {
         e.preventDefault();
-        let name = firstName +' '+ lastName;
+        let name = firstName + ' ' + lastName;
 
         // DB에 들어가는 칼럼이름 맞춰야 함!!
         const data = {
             name,
+            nickname,
             id,
             password
         };
 
         let url = 'http://10.125.121.176:8080/register';
-        
+
         axios.post(url, data)
             .then(() => {
                 alert('회원가입을 완료하셨습니다.');
                 // 회원가입이 완료되면 로그인 페이지로 이동
                 history('/login');
-        })
-            .catch(()=> alert('회원가입이 완료되지 않았습니다.'));
+            })
+            .catch(() => alert('회원가입이 완료되지 않았습니다.'));
     };
 
     console.log('userId', id);
@@ -64,20 +66,24 @@ const Joinus = () => {
                 <div className={`${style.nameTxt}`} style={{ width: '639px' }}>
                     <div className={`nes-field ${style.inputTxt}`}>
                         <p className={`${style.putText}`}>First name</p>
-                        <input type="text" id="name_field" value={firstName} onChange={(e)=>setFisrtName(e.target.value)} className="nes-input" />
+                        <input type="text" id="name_field" value={firstName} onChange={(e) => setFisrtName(e.target.value)} className="nes-input" />
                     </div>
                     <div className={`nes-field ${style.inputTxt}`}>
                         <p className={`${style.putText}`}>Last name</p>
-                        <input type="text" id="name_field" value={lastName} onChange={(e)=>setLastName(e.target.value)} className="nes-input" />
+                        <input type="text" id="name_field" value={lastName} onChange={(e) => setLastName(e.target.value)} className="nes-input" />
                     </div>
                 </div>
                 <div className={`nes-field ${style.inputTxt}`}>
                     <p className={`${style.putText}`}>Id</p>
-                    <input type="text" id="name_field" value={id} onChange={(e)=>setId(e.target.value)} className="nes-input"></input>
+                    <input type="text" id="name_field" value={id} onChange={(e) => setId(e.target.value)} className="nes-input"></input>
                 </div>
                 <div className={`nes-field ${style.inputTxt}`}>
                     <p className={`${style.putText}`}>Password</p>
-                    <input type="password" id="name_field" value={password} onChange={(e)=>setPassword(e.target.value)} className="nes-input" />
+                    <input type="password" id="name_field" value={password} onChange={(e) => setPassword(e.target.value)} className="nes-input" />
+                </div>
+                <div className={`nes-field ${style.inputTxt}`}>
+                    <p className={`${style.putText}`}>Nickname</p>
+                    <input type="text" id="name_field" value={nickname} onChange={(e) => setNickname(e.target.value)} className="nes-input"></input>
                 </div>
                 {/* id, pw, name 입력안하면 입력하라는 창 뜨게 하기 */}
                 <button type="button" onClick={handleSubmit} className={`${style.submitBtn}`}>Sign me up !</button>
