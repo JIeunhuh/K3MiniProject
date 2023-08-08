@@ -28,7 +28,7 @@ const FoodComm = () => {
             <div>
                 <Link to={'/joinus'}>Join us</Link>
                 {/* 토큰값 있으면 로그아웃, 없으면 로그인 뜨게 */}
-                {isLoggedIn ? <Link to={'/login'} onClick={handleLogin}>Login</Link> : <button type='button' className={`${style.logoutBtn}`} onClick={handleLogout}>Logout</button>}
+                {isLoggedIn? <Link to={'/login'} onClick={handleLogin}>Login</Link> : <button type='button' className={`${style.logoutBtn}`} onClick={handleLogout}>Logout</button>}
             </div>
         </main>
     );
