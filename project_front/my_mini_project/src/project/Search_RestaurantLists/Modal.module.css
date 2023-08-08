@@ -54,3 +54,8 @@
 .modal-enter {
     animation: modalFadeIn 0.3s ease-in-out;
 }
+
+.rvTable{
+    text-align: left;
+    padding: 8px;
+}

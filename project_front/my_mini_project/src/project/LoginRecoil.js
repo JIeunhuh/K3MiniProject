@@ -20,5 +20,5 @@ export const nicknameState = atom({
 //  '!==' : 두 값이 서로 다른지를 비교하는 연산자
 export const isLoggedInState = atom({
     key: 'isLoggedInState',
-    default: () => sessionStorage.getItem('jwt') !== null,
+    default: () => sessionStorage.getItem('jwt') == null,
 });

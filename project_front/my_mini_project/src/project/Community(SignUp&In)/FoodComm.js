@@ -12,12 +12,12 @@ const FoodComm = () => {
 
     // 세션에 토큰없으면 로그인 링크 뜨게
     const handleLogin = () => {
-        setIsLoggedIn(false);
+        setIsLoggedIn(null);
     }
 
     // 세션에 토큰 있으면 로그인 상태이므로, 로그아웃 링크 뜨게 만듦! 
     const handleLogout = () => {
-        setIsLoggedIn(true);
+        setIsLoggedIn(sessionStorage.getItem('jwt'));
         sessionStorage.removeItem('jwt');
         alert('logout이 완료되었습니다.');
     }
@@ -28,7 +28,7 @@ const FoodComm = () => {
             <div>
                 <Link to={'/joinus'}>Join us</Link>
                 {/* 토큰값 있으면 로그아웃, 없으면 로그인 뜨게 */}
-                {isLoggedIn? <Link to={'/login'} onClick={handleLogin}>Login</Link> : <button type='button' className={`${style.logoutBtn}`} onClick={handleLogout}>Logout</button>}
+                {isLoggedIn != null ? <Link to={'/login'} onClick={handleLogin}>Login</Link> : <button type='button' className={`${style.logoutBtn}`} onClick={handleLogout}>Logout</button>}
             </div>
         </main>
     );
