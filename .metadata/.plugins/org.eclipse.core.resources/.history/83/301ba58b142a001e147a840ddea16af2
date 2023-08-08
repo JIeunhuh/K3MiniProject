@@ -1,0 +1,89 @@
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
+
+public class dataSetToSQL {
+
+	Connection con = null;
+	
+	
+	private void readCSV(String path) {
+		try {
+			// CSV 파일 읽기
+		    BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(path), "UTF-8"));
+            CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT.withFirstRecordAsHeader());
+
+			// 데이터베이스 테이블에 데이터 삽입
+			String sql = "INSERT INTO restaurant(rname,address,foodtype,food,resnumber) VALUES (?,?,?,?,?)";
+			PreparedStatement pstmt = con.prepareStatement(sql);
+
+			for (CSVRecord record : csvParser) {
+				String col1 = record.get(4); 
+				String col2 = record.get(7); 
+				String col3 = record.get(17);
+				String col4 = record.get(18); 
+				String col5 = record.get(23); 				
+				
+				// 필요한 만큼 열 데이터를 읽어옴
+
+				// PreparedStatement에 값 바인딩 후 쿼리 실행
+				pstmt.setString(1, col1);
+				pstmt.setString(2, col2);
+				pstmt.setString(3, col3);
+				pstmt.setString(4, col4);
+				pstmt.setString(5, col5);
+				
+				// 필요한 만큼 열 데이터를 PreparedStatement에 바인딩
+
+				pstmt.executeUpdate(); // 쿼리 실행
+			}
+
+			// 리소스 해제
+			pstmt.close();
+			csvParser.close();
+			reader.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	private boolean connectDB() {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/myproject", "root", "tiger");
+			System.out.println("데이터베이스가 연결되었습니다.");
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	private void closeDB() {
+		try {
+			con.close();
+			System.out.println("데이터베이스가 닫혔습니다.");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void main(String[] args) {
+		dataSetToSQL data = new dataSetToSQL();
+		if (data.connectDB()) {
+			String csvFile = "C:\\MiniProject\\project_mb(BE)\\output.csv";
+			data.readCSV(csvFile);
+			data.closeDB();
+		}
+	}
+
+}

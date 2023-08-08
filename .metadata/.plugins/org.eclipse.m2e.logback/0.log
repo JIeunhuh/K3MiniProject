@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2023-07-25 10:42:22,587 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2023-07-25 18:00:17,573 [Worker-46: Periodic workspace save.] ERROR o.e.m.c.i.p.r.ProjectRegistryReader - Can't write workspace state
 java.io.FileNotFoundException: C:\MiniProject\.metadata\.plugins\org.eclipse.m2e.core\workspaceState.ser (지정된 경로를 찾을 수 없습니다)
@@ -17,3 +18,6 @@ java.io.FileNotFoundException: C:\MiniProject\.metadata\.plugins\org.eclipse.m2e
 	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1149)
 	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+=======
+2023-07-24 19:17:49,749 [Worker-8: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+>>>>>>> main
