@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Component;
 
+import edu.pnu.domain.Member;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
@@ -21,9 +22,10 @@ public class JwtService {
 	static final Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 	
 	// 서명된 JWT 토큰 생성
-	public String getToken(String id) {
+	public String getToken(Member member) {
 		String token = Jwts.builder()
-				.setSubject(id)
+				.setSubject(member.getId())
+				.claim("nickname", member.getNickname())
 				.setExpiration(new Date(System.currentTimeMillis() + EXPIRATIONTIME))
 				.signWith(key)
 				.compact();

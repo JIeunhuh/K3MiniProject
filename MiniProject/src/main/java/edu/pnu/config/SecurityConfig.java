@@ -68,7 +68,8 @@ public class SecurityConfig {
                 .antMatchers("/manager/**").hasAnyRole("MANAGER", "ADMIN")
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers("/login", "/restaurants/**", "/cities", "/register",
-                		"/getBoardList", "/insertBoard","/insertReview","/getReviewList/{id}").permitAll()
+                		"/getBoardList", "/insertBoard","/insertReview","/getReviewList/{id}",
+                		"/allmembers", "/deleteReview/{id}").permitAll()
                 .anyRequest().authenticated();
         });
 

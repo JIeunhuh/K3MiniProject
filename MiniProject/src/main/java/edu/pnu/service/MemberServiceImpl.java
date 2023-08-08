@@ -49,5 +49,16 @@ public class MemberServiceImpl implements MemberService{
     public List<Member> getAllMembers() {
         return memberRepo.findAll();
     }
-	
+    
+    @Override
+    public Member authenticate(String id, String password) {
+        Member member = memberRepo.findById(id).orElse(null);
+        
+        if (member != null && passwordEncoder.matches(password, member.getPassword())) {
+            return member;
+        }
+        
+        return null;
+    }
+    
 }

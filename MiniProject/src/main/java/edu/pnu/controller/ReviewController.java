@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -44,5 +45,15 @@ public class ReviewController {
         // 해당 레스토랑의 리뷰 목록을 조회하는 로직을 작성합니다.
         List<Review> restaurantReviews = reviewService.getReviewByrestId(id);
         return restaurantReviews;
+    }
+    
+    @DeleteMapping("/deleteReview/{id}")
+    public ResponseEntity<String> deleteBoard(@PathVariable Review id) {
+        try {
+            reviewService.deleteReview(id);
+            return ResponseEntity.ok("Review deleted successfully");
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Error deleting board");
+        }
     }
 }
