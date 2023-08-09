@@ -71,15 +71,19 @@ const FoodFind = ({ locations }) => {
     // city_gu값이 변경될때마다 카테고리 업데이트
     useEffect(() => {
 
-        console.log("city_gu", city_gu)
+        // console.log("city_gu", city_gu)
         // #-2. map 돌려서 시/광역시에 해당하는 구 하나씩 가져옴
         setCat_gu(city_gu.map((item, idx) => (
-            <option key={idx} value={item[1]}>
+            <option key={idx + 1} value={item[1]}>
                 {item[1]}
             </option>
         )));
 
     }, [city_gu]);
+
+    // useEffect(() => {
+    //     console.log('구', cat_gu.map((item) => item.props.value));
+    // }, [cat_gu]);
 
     // # 검색 !
     const searchFood = () => {
@@ -101,12 +105,14 @@ const FoodFind = ({ locations }) => {
         }
         getData();
 
-
+        console.log('getData', restaurant)
         // text box에서 입력된 키워드 가져와서 검색
         const kw = searchKw.trim();
-        if (kw == '') {
-            let allRes = restaurant.map((item) => item);
-            console.log('모든 결과', allRes)
+        let allRes = [];
+        if (kw == null) {
+            allRes = restaurant.filter((item) => item);
+            // allRes = Res.map((item) => item);
+            // console.log('모든 결과', allRes)
             return allRes;
         } // kw에 아무것도 검색된거 없으면 모든 종류의 식당 다 나오게 해야 하는데 왜 안나오지 ? 껒셩영
 
@@ -115,16 +121,15 @@ const FoodFind = ({ locations }) => {
             item.rname.includes(kw) || item.foodtype.includes(kw) || item.food.includes(kw));
         setSearchRes(filteredRes);
 
+        console.log('allRes', allRes);
     };
-    console.log('search res', searchRes);
 
-    console.log('시/도', city);
-    // 왜 현재 value값이 업데이트가 안되냐고 !
-    console.log('구', chooseCity_gu);
+
+    // console.log('구', cat_gu);
 
 
     return (
-        <div className='container' style={{backgroundColor : '#FFDF86'}}>
+        <div className='container' style={{ backgroundColor: '#FFDF86' }}>
             {/* 상단의 navigation */}
             <FoodNav />
             <div className={`nes-container is-rounded ${style.container2} container`}>
@@ -134,7 +139,7 @@ const FoodFind = ({ locations }) => {
                         <label htmlFor="error_select">광역시/도를 선택하세요</label>
                         <div className='nes-select is-error' >
                             <select required id="error_select" onChange={checkCity} ref={selectCity}>
-                                <option defaultValue='' disabled hidden>Select...</option>
+                                <option defaultValue={cate[0]} disabled hidden>Select...</option>
                                 {cate}
                             </select>
                         </div>

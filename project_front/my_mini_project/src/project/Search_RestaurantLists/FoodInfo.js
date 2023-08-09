@@ -12,7 +12,7 @@ import StarRating from './StarRating';
 // 다른 컴포넌트에서 해당 컴포넌트의 변수? 함수? 쓰려면 props 설정 해야함
 const FoodInfo = ({ isOpen, onClose, restaurant, rvLists }) => {
     // 로그인 사용자만 이용하게 하기 위함 !
-    const [isLoggedin, setIsLoggedIn] = useRecoilState(isLoggedInState);
+    const isLoggedin = useRecoilValue(isLoggedInState);
 
     // db넣기 위해서 받는 거 (nickname, constent, review score)
     const [restId, setRestId] = useRecoilState(Restaurant_id);
@@ -23,7 +23,6 @@ const FoodInfo = ({ isOpen, onClose, restaurant, rvLists }) => {
 
     const [hoverRating, setHoverRating] = useState(0);
 
-    const [id, setId] = useRecoilState(idState);
 
     //useLocation
     const location = useLocation();
@@ -31,7 +30,7 @@ const FoodInfo = ({ isOpen, onClose, restaurant, rvLists }) => {
 
     if (!isOpen) return null;
     setRestId(restaurant.id);
-    // console.log('restid', restId);
+    // console.log('login', isLoggedin);
 
     // # submit !
     const handleSubmit = () => {
@@ -67,7 +66,7 @@ const FoodInfo = ({ isOpen, onClose, restaurant, rvLists }) => {
 
     }
     // console.log('rvlist', rvLists);
-    // console.log('nickname', nickname);
+    console.log('nickname', nickname);
     // 별점 만들기
     const handleStarClick = (value) => {
         setReviewScore(value);
@@ -84,61 +83,14 @@ const FoodInfo = ({ isOpen, onClose, restaurant, rvLists }) => {
         //db에 들어간 날짜시간에서 날짜만 보이게 하긔(정규식)
         let dateStr = row.date.match(/^\d{4}-\d{2}-\d{2}/)[0];
         // reviewScore 별로 보이게 하긔
-        let icon;
+        let icon = [];
         let score = parseInt(row.reviewScore);
-        if (score === 0) {
-            icon = <span className={style.rateImg}>
-                <img style={{ width: '5%' }} src='./images/star4.svg' />
-                <img style={{ width: '5%' }} src='./images/star4.svg' />
-                <img style={{ width: '5%' }} src='./images/star4.svg' />
-                <img style={{ width: '5%' }} src='./images/star4.svg' />
-                <img style={{ width: '5%' }} src='./images/star4.svg' />
-            </span>
-        }
-        else if (score === 1) {
-            icon = <span className={style.rateImg}>
-                <img src='./images/star1.svg' style={{ width: '5%' }} />
-                <img src='./images/star4.svg' style={{ width: '5%' }} />
-                <img src='./images/star4.svg' style={{ width: '5%' }} />
-                <img src='./images/star4.svg' style={{ width: '5%' }} />
-                <img src='./images/star4.svg' style={{ width: '5%' }} />
-            </span>
-        }
-        else if (score === 2) {
-            icon = <span className={style.rateImg}>
-                <img src='./images/star1.svg' style={{ width: '5%' }} />
-                <img src='./images/star1.svg' style={{ width: '5%' }} />
-                <img src='./images/star4.svg' style={{ width: '5%' }} />
-                <img src='./images/star4.svg' style={{ width: '5%' }} />
-                <img src='./images/star4.svg' style={{ width: '5%' }} />
-            </span>
-        }
-        else if (score === 3) {
-            icon = <span className={style.rateImg}>
-                <img src='./images/star1.svg' style={{ width: '5%' }} />
-                <img src='./images/star1.svg' style={{ width: '5%' }} />
-                <img src='./images/star1.svg' style={{ width: '5%' }} />
-                <img src='./images/star4.svg' style={{ width: '5%' }} />
-                <img src='./images/star4.svg' style={{ width: '5%' }} />
-            </span>
-        }
-        else if (score === 4) {
-            icon = <span className={style.rateImg}>
-                <img src='./images/star1.svg' style={{ width: '5%' }} />
-                <img src='./images/star1.svg' style={{ width: '5%' }} />
-                <img src='./images/star1.svg' style={{ width: '5%' }} />
-                <img src='./images/star1.svg' style={{ width: '5%' }} />
-                <img src='./images/star4.svg' style={{ width: '5%' }} />
-            </span>
-        }
-        else if (score === 5) {
-            icon = <span className={style.rateImg}>
-                <img src='./images/star1.svg' />
-                <img src='./images/star1.svg' />
-                <img src='./images/star1.svg' />
-                <img src='./images/star1.svg' />
-                <img src='./images/star1.svg' />
-            </span>
+        for (let i = 1; i <= 5; i++) {
+            if (i <= score) {
+                icon.push(<img key={i} src='./images/star1.svg' style={{ width: '5%' }} />);
+            } else {
+                icon.push(<img key={i} src='./images/star4.svg' style={{ width: '5%' }} />);
+            }
         }
 
         rvTags.push(
@@ -166,7 +118,7 @@ const FoodInfo = ({ isOpen, onClose, restaurant, rvLists }) => {
                 <h2 style={{ fontSize: '50px' }}>{restaurant.rname}</h2>
                 <h4>{restaurant.city + ' ' + restaurant.city_gu + ' ' + restaurant.city_dong + ' ' + restaurant.city_address}</h4>
                 {/* 로그인 상태면 리뷰 보이게, 아니면 로그인 하도록 만듦 */}
-                {isLoggedin != null ?
+                {isLoggedin != '' ?
                     (<form>
                         <label htmlFor="textarea_field">리뷰를 작성하세요</label>
                         {/* text area : input type의 text보다 더 긴 텍스트를 입력받을 수 있음 */}

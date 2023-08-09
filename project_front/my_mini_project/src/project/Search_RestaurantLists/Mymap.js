@@ -5,8 +5,11 @@ import { useState, useEffect, useRef } from 'react';
 import style from '../Food.module.css';
 
 const Mymap = ({ searchRes }) => {
+
     // 위치 표시하기 위한 useRef
     const mapRef = useRef({ markers: [] }); //빈 배열로 초기화
+    // 이전 마커를 저장
+    const markersRef = useRef([]);
 
     // 마커 표시
     const [desMarkers, setMarkers] = useState([]);
@@ -26,8 +29,8 @@ const Mymap = ({ searchRes }) => {
         //주소-좌표간 변환 서비스 객체를 생성한다.
         const geocoder = new window.kakao.maps.services.Geocoder();
 
-        // 이전 마커를 삭제하기 위해 현재 마커를 변수에 저장
-        // const prevMarkers = mapRef.current.markers;
+        //이전 마커 저장
+        markersRef.current.forEach(marker => marker.setMap(null));
 
         //searchRes에 있는 각 식당의주소 좌표로 변환하고 마커 표시
         const updateMark = searchRes.map((item) => {
@@ -39,6 +42,8 @@ const Mymap = ({ searchRes }) => {
                         position: coords,
                     });
                     marker.setMap(mapRef.current);
+                    // 이전 마커를 배열에 저장
+                    markersRef.current.push(marker);
                     // mapRef.current.markers.push(marker);
                 }
             });
@@ -57,13 +62,17 @@ const Mymap = ({ searchRes }) => {
             geocoder.addressSearch(firstAddr, (result, status) => {
                 if (status === window.kakao.maps.services.Status.OK) {
                     const coords = new window.kakao.maps.LatLng(result[0].y, result[0].x);
-                    setState((prev) => ({
-                        ...prev,
-                        center: {
-                            lat: coords.getLat(),
-                            lng: coords.getLng(),
-                        },
-                    }));
+
+                    // 마커를 클릭했을 때 이벤트 핸들러 추가(이거 문제 있음 미췬)
+                    // window.kakao.maps.event.addListener(marker, 'click', () => {
+                        setState((prev) => ({
+                            ...prev,
+                            center: {
+                                lat: coords.getLat(),
+                                lng: coords.getLng(),
+                            },
+                        }));
+                    // });
                 }
             });
         }
@@ -71,7 +80,7 @@ const Mymap = ({ searchRes }) => {
 
 
 
-    console.log(desMarkers);
+    // console.log(desMarkers);
     return (
         <div className={`${style.kakaoMap}`}>
             <Map ref={mapRef} // 지도를 표시할 Container

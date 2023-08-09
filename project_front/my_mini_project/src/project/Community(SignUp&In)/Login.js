@@ -13,11 +13,12 @@ const Login = () => {
     // id / pw 상태관리
     const [id, setId] = useRecoilState(idState);
     const [password, setPassword] = useRecoilState(passwordState);
+
     // const [name, setName] = useState('');
     const history = useNavigate();
 
     //인증 상태
-    const [isAuth, setIsAuth] = useRecoilState(isLoggedInState);
+    const [isLoggedIn, setIsLoggedIn] = useRecoilState(isLoggedInState);
 
     // token -> nickname
     const [nickname, setNickname] = useRecoilState(nicknameState);
@@ -38,8 +39,9 @@ const Login = () => {
                 console.log('response', response);
                 if (jwtToken != null) {
                     // sessionStorage에 토큰 저장
-                    sessionStorage.setItem('jwt', jwtToken);
-                    setIsAuth(false);
+                    localStorage.setItem('jwt', jwtToken);
+                    setIsLoggedIn(localStorage.getItem('jwt', jwtToken));
+
 
                     // 토큰 추출 및 닉네임 저장
                     // token decoding
@@ -52,14 +54,15 @@ const Login = () => {
                     alert('로그인 완료');
 
                     // 회원가입이 완료되면 로그인 페이지로 이동
-                    history('/comm');
-                    // history('/find');
+                    // history('/comm');
+                    history('/find');
                 }
 
             })
             .catch(() => alert('비밀번호가 올바르지 않습니다.'));
     }
-    console.log(nickname);
+    // console.log(nickname);
+    // console.log('token', isLoggedIn);
 
     return (
         <div className={`${style.container}`}>

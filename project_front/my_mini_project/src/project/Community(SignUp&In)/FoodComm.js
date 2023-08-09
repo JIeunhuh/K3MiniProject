@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { isLoggedInState } from '../LoginRecoil';
+import { useEffect } from 'react';
 
 import style from './Login.module.css';
 // community 상단에는 login / join us 구현하기
@@ -12,14 +13,16 @@ const FoodComm = () => {
 
     // 세션에 토큰없으면 로그인 링크 뜨게
     const handleLogin = () => {
-        setIsLoggedIn(null);
+        setIsLoggedIn('');
+        // console.log('login', isLoggedIn);
     }
 
     // 세션에 토큰 있으면 로그인 상태이므로, 로그아웃 링크 뜨게 만듦! 
     const handleLogout = () => {
-        setIsLoggedIn(sessionStorage.getItem('jwt'));
-        sessionStorage.removeItem('jwt');
+        localStorage.removeItem('jwt');
+        setIsLoggedIn(localStorage.getItem('jwt'));
         alert('logout이 완료되었습니다.');
+        // console.log('login', isLoggedIn);
     }
 
 
@@ -28,7 +31,7 @@ const FoodComm = () => {
             <div>
                 <Link to={'/joinus'}>Join us</Link>
                 {/* 토큰값 있으면 로그아웃, 없으면 로그인 뜨게 */}
-                {isLoggedIn != null ? <Link to={'/login'} onClick={handleLogin}>Login</Link> : <button type='button' className={`${style.logoutBtn}`} onClick={handleLogout}>Logout</button>}
+                {isLoggedIn != null ? <button type='button' className={`${style.logoutBtn}`} onClick={handleLogout}>Logout</button> : <Link to={'/login'} onClick={handleLogin}>Login</Link>}
             </div>
         </main>
     );

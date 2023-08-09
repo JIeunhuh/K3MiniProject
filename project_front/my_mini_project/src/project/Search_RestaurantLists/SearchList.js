@@ -55,35 +55,35 @@ const SearchList = ({ searchRes }) => {
 
     return (
         <div className={`${style.info}`}>
-            {currentItems.length === 0 ? <div> 검색 결과가 없습니다.</div> :
-                <table border='1px solid'>
-                    <th>Restaurant</th>
-                    <th>Food</th>
-                    <th>Address</th>
-                    {foodTags}
-                </table>
-            }
-            {searchRes.length > itemsPerPage && (
-                <div className={`${style.pagination}`}>
-                    {startPage > 1 && (
-                        <button onClick={() => paginate(startPage - 1)} className={`${style.pageLink}`}>이전</button>
-                    )}
-                    {Array.from({ length: endPage - startPage + 1 }, (_, i) => i + startPage).map((number) => (
-                        <button
-                            key={number}
-                            onClick={() => paginate(number)}
-                            className={`${style.pageLink} ${currentPage === number ? style.active : ''}`}
-                        >
-                            {number}
-                        </button>
-                    ))}
-                    {endPage < totalGroups * pagesPerGroup && (
-                        <button onClick={() => paginate(endPage + 1)} className={`${style.pageLink}`}>다음</button>
-                    )}
-                </div>
-            )}
-            <FoodInfo isOpen={showModal} onClose={closeModal} restaurant={selectedRestaurant} rvLists={rvLists} />
-        </div>
+        {currentItems.length === 0 ? <div> 검색 결과가 없습니다.</div> :
+            <table border='1px solid'>
+                <th>Restaurant</th>
+                <th>Food</th>
+                <th>Address</th>
+                {foodTags}
+            </table>
+        }
+        {searchRes.length > itemsPerPage && (
+            <div className={`${style.pagination}`}>
+                {startPage > 1 && (
+                    <button onClick={() => paginate(startPage - 1)} className={`${style.pageLink}`}>이전</button>
+                )}
+                {Array.from({ length: endPage - startPage + 1 }, (_, i) => i + startPage).map((number) => (
+                    <button
+                        key={number}
+                        onClick={() => paginate(number)}
+                        className={`${style.pageLink} ${currentPage === number ? style.active : ''}`}
+                    >
+                        {number}
+                    </button>
+                ))}
+                {endPage < totalGroups * pagesPerGroup && (
+                    <button onClick={() => paginate(endPage + 1)} className={`${style.pageLink}`}>다음</button>
+                )}
+            </div>
+        )}
+        <FoodInfo isOpen={showModal} onClose={closeModal} restaurant={selectedRestaurant} rvLists={rvLists} />
+    </div>
     );
 };
 
