@@ -30,6 +30,12 @@ public class MemberServiceImpl implements MemberService{
 	// setEnabled이 False면 로그인 안됨!!
 	@Override
 	public void createMember(Member member) {
+	    // Check if the nickname is already in use
+	    Member existingMember = memberRepo.findByNickname(member.getNickname());
+	    if (existingMember != null) {
+	        throw new IllegalArgumentException("이미 사용중인 닉네임입니다.");
+	    }
+	    
 		member.setId(member.getId());
 		String encodedPassword = passwordEncoder.encode(member.getPassword());
 		member.setPassword(encodedPassword);

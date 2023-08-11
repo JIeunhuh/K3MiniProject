@@ -67,4 +67,10 @@ public class BoardServiceImpl implements BoardService {
 	public List<Board> searchBoards(String keyword){
 		return boardRepo.findByTitleContainingOrContentContaining(keyword, keyword);
 	}
+	
+	@Override
+	public void getBoardSeq(Board board) {
+		boardRepo.deleteById(board.getSeq());
+	}
+
 }

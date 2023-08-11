@@ -23,4 +23,6 @@ public interface BoardService {
 
 	Board createBoard(Board board);
 
+	void getBoardSeq(Board board);
+
 }

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Component;
 
 import edu.pnu.domain.Member;
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
@@ -49,5 +50,13 @@ public class JwtService {
 				return user;
 		}
 		return null;
+	}
+	
+	public Claims decodeJwt(String jwtToken) {
+		return Jwts.parserBuilder()
+				.setSigningKey(key)
+				.build()
+				.parseClaimsJws(jwtToken)
+				.getBody();
 	}
 }

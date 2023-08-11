@@ -5,8 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -70,9 +68,16 @@ public class LoginController {
     }
 
     @PostMapping("/register")
-    public String register(@RequestBody Member member) {
-        memberService.createMember(member);
-        return "Registration successful!";
+    public ResponseEntity<String> register(@RequestBody Member member) {
+//        memberService.createMember(member);
+//        return "Registration successful!";
+    	try {
+    		memberService.createMember(member);
+    		return ResponseEntity.ok("계정이 생성되었습니다.");
+    	} catch (IllegalArgumentException e) {
+			// TODO: handle exception
+    		return ResponseEntity.badRequest().body(e.getMessage());
+		}
     }
     
     @GetMapping("/allmembers")

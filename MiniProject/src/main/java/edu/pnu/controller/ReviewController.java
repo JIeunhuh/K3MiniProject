@@ -48,7 +48,7 @@ public class ReviewController {
     }
     
     @DeleteMapping("/deleteReview/{id}")
-    public ResponseEntity<String> deleteBoard(@PathVariable Review id) {
+    public ResponseEntity<String> deleteReview(@PathVariable Review id) {
         try {
             reviewService.deleteReview(id);
             return ResponseEntity.ok("Review deleted successfully");

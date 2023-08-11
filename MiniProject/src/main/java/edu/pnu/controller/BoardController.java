@@ -1,12 +1,13 @@
 package edu.pnu.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,4 +36,16 @@ public class BoardController {
         Board createdBoard = boardService.createBoard(board);
         return ResponseEntity.ok(createdBoard);
     }
+    
+    @DeleteMapping("/deleteBoard/{seq}")
+    public ResponseEntity<String> deleteBoard(@PathVariable Board seq){
+    	try {
+    		boardService.deleteBoard(seq);
+    		return ResponseEntity.ok("Board deleted successfully");
+    	} catch (Exception e) {
+    		return ResponseEntity.status(500).body("Error delete board");
+    	}
+    }
+    
+
 }

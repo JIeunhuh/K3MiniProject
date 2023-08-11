@@ -9,7 +9,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import edu.pnu.domain.Board;
 import edu.pnu.domain.Review;
 import edu.pnu.persistence.ReviewRepository;
 
