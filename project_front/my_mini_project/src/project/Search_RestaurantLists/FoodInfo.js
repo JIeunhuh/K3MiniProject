@@ -8,6 +8,7 @@ import { Restaurant_id } from '../FoodInfoRecoil';
 import axios from 'axios';
 import { Link, useLocation } from 'react-router-dom';
 import StarRating from './StarRating';
+import moment from 'moment';
 
 // 다른 컴포넌트에서 해당 컴포넌트의 변수? 함수? 쓰려면 props 설정 해야함
 const FoodInfo = ({ isOpen, onClose, restaurant, rvLists }) => {
@@ -20,17 +21,31 @@ const FoodInfo = ({ isOpen, onClose, restaurant, rvLists }) => {
     const [reviewScore, setReviewScore] = useState(0);
     //  review 상태
     const [content, setContent] = useState('');
-
+    //  reviewScore
     const [hoverRating, setHoverRating] = useState(0);
 
+    // userReviews 등록하면 바로 리뷰창에 보일수 있게
+    const [userReviews, setUserReviews] = useState(rvLists);
+
+    // 현재 시각 보내기
+    // const [date, setDate] = useState
+    const moment = require('moment');
+    const currentDate = moment();
+    const date = currentDate.format('YYYY-MM-DD');
+    // console.log(formattedDate)
 
     //useLocation
     const location = useLocation();
     const from = location.pathname; //현재 페이지 경로 저장
-
+    //useEffect(()=>{console.log('userList',userReviews);},[userReviews]);
+    console.log('userRv', userReviews);
+    console.log('rvList', rvLists);
+    // setUserReviews([...rvLists]);
     if (!isOpen) return null;
+
     setRestId(restaurant.id);
     // console.log('login', isLoggedin);
+
 
     // # submit !
     const handleSubmit = () => {
@@ -39,6 +54,7 @@ const FoodInfo = ({ isOpen, onClose, restaurant, rvLists }) => {
             restId,
             nickname,
             content,
+            date,
             reviewScore,
         }
 
@@ -50,9 +66,12 @@ const FoodInfo = ({ isOpen, onClose, restaurant, rvLists }) => {
 
             //fetch()
             axios.post(url, data)
-                .then((resp) =>
+                .then((resp) => {
                     // 서버 응답 처리 
-                    console.log('리뷰 작성 성공', resp.data))
+                    console.log('리뷰 작성 성공', resp.data)
+                    // userReview를 상태에 저장
+                    setUserReviews([data, ...rvLists]);
+                })
                 .catch((err) => {
                     // 오류 처리
                     console.log('리뷰 작성 오류:', err);
@@ -65,8 +84,9 @@ const FoodInfo = ({ isOpen, onClose, restaurant, rvLists }) => {
         setReviewScore(0);
 
     }
+
     // console.log('rvlist', rvLists);
-    console.log('nickname', nickname);
+    // console.log('nickname', nickname);
     // 별점 만들기
     const handleStarClick = (value) => {
         setReviewScore(value);
@@ -75,12 +95,13 @@ const FoodInfo = ({ isOpen, onClose, restaurant, rvLists }) => {
     const handleStarHover = (value) => {
         setHoverRating(value);
     }
-
+    // console.log('userRV', userReviews)
     // review List 모달창에 띄우기(DB에 nickname, content, score, date)
     let rvTags = [];
-    for (let row of rvLists) {
+    // 처음에 userReviews가 []이라 리뷰를 입력해야 이미 작성된 리뷰도 보임 왜일까..?
+    for (let row of userReviews) {
 
-        //db에 들어간 날짜시간에서 날짜만 보이게 하긔(정규식)
+        //db에 들어간 날짜시간에서 날짜만 보이게 하긔(정규식)(프론트에서 백으로 데이터 보낼때 date가 null로 들어가나 ?..)
         let dateStr = row.date.match(/^\d{4}-\d{2}-\d{2}/)[0];
         // reviewScore 별로 보이게 하긔
         let icon = [];
@@ -99,9 +120,33 @@ const FoodInfo = ({ isOpen, onClose, restaurant, rvLists }) => {
                 <td>{row.content}</td>
                 <td>{score != null ? icon : 'None'}</td>
                 <td>{dateStr}</td>
+                {/* 내 리뷰 삭제 */}<td>
+                    {nickname == row.nickname ? <button onClick={() => handleDeleteReview(row.id)}>X</button> : ''}</td>
             </tr>
         )
     }
+
+    // Delete Reviews (리뷰 삭제는 되는거 같은데 창도 새로고침 되는 듯?)
+    const handleDeleteReview = (reviewId) => {
+        // 토큰 기반으로 리뷰 삭제 처리
+        let url = 'http://10.125.121.176:8080/deleteReview/';
+        url = url + `${reviewId}`;
+
+        // API 호출
+        axios.delete(url)
+            .then((resp) => {
+                console.log('리뷰 삭제 성공', resp.data);
+
+                // 리뷰 삭제한 후 해당 리뷰를 제외한 새 배열 생성하기
+                const updateReviews = rvLists.filter((item) => item.id !== reviewId);
+                setUserReviews(updateReviews);
+            })
+            .catch((err) => {
+                console.log('리뷰 삭제 오류', err);
+            });
+    };
+
+
 
     return (
         // react-modal 사용할때 요소 지정 다 해주어야 함
@@ -138,7 +183,7 @@ const FoodInfo = ({ isOpen, onClose, restaurant, rvLists }) => {
                         {/* 리뷰리스트 보여주기 */}
                         {/*rvLists === []로 했을때 삼항연산자 앞에 코드 실행 안되는 문제 : rvLists가 빈 배열인 경우에도 빈 테이블이 렌더링되고 있습니다. 이는 JSX의 삼항 연산자 내부에서 배열의 비어있는 상태를 검사하는 방식 때문에 발생하는 문제입니다.
                         이런 경우에는 rvLists의 길이를 검사하여 렌더링 여부를 결정하는 것이 좋습니다. */}
-                        {rvLists.length === 0 ? <div>
+                        {userReviews.length === 0 ? <div>
                             <h3>Review</h3>
                             <p>아직 작성된 리뷰가 없습니다.</p></div> :
                             <div>

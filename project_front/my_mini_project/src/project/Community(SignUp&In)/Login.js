@@ -51,7 +51,7 @@ const Login = () => {
                     // nickname statement
                     setNickname(extractedNickname);
 
-                    alert('로그인 완료');
+                    alert(extractedNickname+'님, 환영합니다 !');
 
                     // 회원가입이 완료되면 로그인 페이지로 이동
                     // history('/comm');

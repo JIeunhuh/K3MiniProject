@@ -33,6 +33,7 @@ const FoodFind = ({ locations }) => {
     // 시/도 가 선택되면 그 타겟을 잡음
     const checkCity = () => {
         setCity(selectCity.current.value); // 선택된 시/도의 value 값을 잡음
+        
     }
 
     // #-3. 구 가 선택되면 그 타겟을 잡음
@@ -65,9 +66,10 @@ const FoodFind = ({ locations }) => {
 
         //city값이 변경될 때마다 gu_cate 상태를 업데이트 하는게 더 좋음
         setCity_gu(gu_cate);
-
+        setChooseCity_gu(gu_cate[0]?gu_cate[0][1] : gu_cate[0]);
+        console.log('gu_cate',gu_cate[0]?gu_cate[0][1] : gu_cate[0]);
     }, [city]);
-
+    
     // city_gu값이 변경될때마다 카테고리 업데이트
     useEffect(() => {
 
@@ -96,6 +98,7 @@ const FoodFind = ({ locations }) => {
             // useRef의 current value값을 가져옴
             url = url + `/${city}`;
             url = url + `/${chooseCity_gu}`;
+            console.log(chooseCity_gu + ','+ selectCity_gu.current.value);
 
             //fetch()
             fetch(url)
@@ -149,7 +152,7 @@ const FoodFind = ({ locations }) => {
                         <div className="nes-select is-error">
                             {/* option 에다가 이벤트 핸들링 걸면 어뜩하늬ㅢㅣ */}
                             <select required id="error_select" onChange={checkCity_gu} ref={selectCity_gu}>
-                                <option defaultValue='' disabled hidden >Select...</option>
+                                <option defaultValue='Selected' disabled hidden >Select...</option>
                                 {cat_gu}
                             </select>
                         </div>

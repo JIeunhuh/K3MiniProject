@@ -120,7 +120,7 @@
     margin-right: 5%;
     margin-bottom: 5%;
     background-color: white;
-   
+
 
 }
 
@@ -138,6 +138,34 @@
     margin-bottom: 5%;
 
 }
+
+/* kakaomap - custom overlay */
+.overlay {
+    /* 커스텀 오버레이 내용 스타일 */
+    background-color: #F7F3CE;
+    border: 1px solid #ccc;
+    border-radius: 4%;
+    padding: 10px;
+    width: 130%;
+    /* ... */
+}
+.title{
+    display: flex;
+    font-size: larger;
+    font-weight: bold;
+    color: #43435D;
+
+}
+
+.close {
+    font-size: smaller;
+    background-color: #F3F8FF ;
+    border: 1px solid #B2B7FF;
+    border-radius: 20%;
+    padding: 1%;
+    
+}
+
 
 /* 769px부터 1024px 사이의 화면 크기일 때 적용되는 스타일 */
 @media screen and (min-width: 769px) and (max-width: 1024px) {}
