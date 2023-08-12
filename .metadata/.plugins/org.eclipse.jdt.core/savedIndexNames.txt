@@ -1,6 +1,11 @@
 INDEX VERSION 1.132+C:\MiniProject\.metadata\.plugins\org.eclipse.jdt.core
 2140829972.index
+<<<<<<< HEAD
 1617739528.index
 1865797976.index
 3413725848.index
 2327522185.index
+=======
+1865797976.index
+3413725848.index
+>>>>>>> main

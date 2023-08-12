@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Chapter06ThTeApplication<Chapter06ThTe>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "edu.pnu.Chapter06ThTeApplication",
+            "projectName": "Chapter06ThTe",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
