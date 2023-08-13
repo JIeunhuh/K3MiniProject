@@ -1,23 +1,18 @@
 //login page
 import axios from "axios";
-<<<<<<< HEAD:project_front/my_mini_project/src/project/Login.js
 import { useEffect, useState } from "react";
-=======
 import { useRecoilState } from "recoil";
 import { idState, passwordState, isLoggedInState, nicknameState } from "../LoginRecoil";
->>>>>>> 807d2250c27bab1482c99ca353a826213a5d092a:project_front/my_mini_project/src/project/Community(SignUp&In)/Login.js
 import style from './Login.module.css';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 // token에서 nickname을 추출하기 위함
 import jwtDecode from "jwt-decode";
 
-//insert dummy data
-import dummy from './data.json';
 
 const Login = () => {
     // modal component 이용해서 로그인 구현
     // id / pw 상태관리
+
     const [id, setId] = useRecoilState(idState);
     const [password, setPassword] = useRecoilState(passwordState);
 
@@ -39,7 +34,6 @@ const Login = () => {
         //     password
         // };
 
-<<<<<<< HEAD:project_front/my_mini_project/src/project/Login.js
         // dummy data에 id, pw 존재하면 로그인 성공으로 간주 
         const user = dummy.Member.find(member => member.id === id & member.password === password);
         if(user) {
@@ -66,7 +60,6 @@ const Login = () => {
     //             }
     //         })
     //         .catch(() => alert('비밀번호가 올바르지 않습니다.'));
-=======
         // login db 요청
         axios.post('http://10.125.121.176:8080/login', data)
             .then((response) => {
@@ -96,7 +89,6 @@ const Login = () => {
 
             })
             .catch(() => alert('비밀번호가 올바르지 않습니다.'));
->>>>>>> 807d2250c27bab1482c99ca353a826213a5d092a:project_front/my_mini_project/src/project/Community(SignUp&In)/Login.js
     }
     // console.log(nickname);
     // console.log('token', isLoggedIn);
