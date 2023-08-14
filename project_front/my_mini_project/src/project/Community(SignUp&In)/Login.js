@@ -29,21 +29,21 @@ const Login = () => {
     // 로그인 db url 가져오기
     const login = () => {
 
-        // const data = {
-        //     id,
-        //     password
-        // };
+        const data = {
+            id,
+            password
+        };
 
-        // dummy data에 id, pw 존재하면 로그인 성공으로 간주 
-        const user = dummy.Member.find(member => member.id === id & member.password === password);
-        if(user) {
-            alert('로그인 완료');
-            setIsAuth(true);
-            history('/comm');
-        }
-        else{
-            alert('no User Id or PW');
-        }
+        // // dummy data에 id, pw 존재하면 로그인 성공으로 간주 
+        // const user = dummy.Member.find(member => member.id === id & member.password === password);
+        // if(user) {
+        //     alert('로그인 완료');
+        //     setIsAuth(true);
+        //     history('/comm');
+        // }
+        // else{
+        //     alert('no User Id or PW');
+        // }
 
     //     // login db 요청
     //     axios.post('http://10.125.121.176:8080/login', data)
