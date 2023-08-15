@@ -10,11 +10,12 @@
 |   [@JIeunhuh](https://github.com/JIeunhuh)   |    [@sou05091](https://github.com/sou05091)  |
 | 허지은 | 김민범 |
 
-## 프로젝트 소개
-
-
 
 ## 3. 목차 
+[프로젝트 소개](#4-프로젝트-소개5---10줄)
+[시작가이드](#5-시작가이드요구사항설치-및-실행)
+[기술 스택](#6-기술-스택)
+[주요기능](#6-주요-기능-📦)
 
 ## 4. 프로젝트 소개(5 - 10줄)
 
@@ -22,7 +23,7 @@
 
 ## 5. 시작가이드(요구사항,설치 및 실행)
 
-## 6. 기술 스택(뱃지 사용)
+## 6. 기술 스택
 
 ### Environment
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white)
