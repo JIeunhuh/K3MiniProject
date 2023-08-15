@@ -1,0 +1,64 @@
+.star {
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    width: 273px;
+    height: 257px;
+    transform: rotate(-26.944deg);
+    flex-shrink: 0;
+}
+
+.commBox {
+    /* position: relative; */
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.comm_rec1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1400px;
+    height: 900px;
+    flex-shrink: 0;
+    border: 3px dashed #B2B7FF;
+    background: #FFDEDE;
+}
+
+.comm_rec2 {
+    width: 1100px;
+    height: 650px;
+    flex-shrink: 0;
+    border: 2px dashed #606579;
+    background: #F5F5F5;
+}
+
+.comm_back2 {
+    position: absolute;
+    z-index: 1;
+    margin-left: 25%;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.hearts {
+    width: 324px;
+    height: 177px;
+    flex-shrink: 0;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+
+}
+
+/* write Btn */
+.writeBtn {
+    border-radius: 10px;
+    flex-shrink: 0;
+    width: 81px;
+height: 37px;
+}
