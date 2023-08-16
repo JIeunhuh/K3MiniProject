@@ -54,7 +54,7 @@
 - 회원가입 기능
 - Community, Review게시판, 댓글 기능
 - 식당 데이터 제공
-- 상세 개발 내용 → (https://github.com/JIeunhuh/K3MiniProject/tree/back)
+- 상세 개발 내용 → [바로가기](https://github.com/JIeunhuh/K3MiniProject/tree/back)
 
 ## 9. 주요 기능 📦
 
