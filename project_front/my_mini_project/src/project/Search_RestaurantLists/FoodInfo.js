@@ -137,8 +137,10 @@ const FoodInfo = ({ isOpen, onClose, restaurant, rvLists }) => {
             .then((resp) => {
                 console.log('리뷰 삭제 성공', resp.data);
 
+                alert('리뷰 삭제가 완료되었습니다.');
+
                 // 리뷰 삭제한 후 해당 리뷰를 제외한 새 배열 생성하기
-                const updateReviews = rvLists.filter((item) => item.id !== reviewId);
+                const updateReviews = userReviews.filter((item) => item.id !== reviewId);
                 setUserReviews(updateReviews);
             })
             .catch((err) => {
@@ -163,12 +165,14 @@ const FoodInfo = ({ isOpen, onClose, restaurant, rvLists }) => {
                 <h2 style={{ fontSize: '50px' }}>{restaurant.rname}</h2>
                 <h4>{restaurant.city + ' ' + restaurant.city_gu + ' ' + restaurant.city_dong + ' ' + restaurant.city_address}</h4>
                 {/* 로그인 상태면 리뷰 보이게, 아니면 로그인 하도록 만듦 */}
-                {isLoggedin != '' ?
+                {isLoggedin != null ?
                     (<form>
                         <label htmlFor="textarea_field">리뷰를 작성하세요</label>
                         {/* text area : input type의 text보다 더 긴 텍스트를 입력받을 수 있음 */}
-                        <textarea type='text'
-                            value={content} onChange={(e) => setContent(e.target.value)} />
+                        <div>
+                            <textarea type='text'
+                                value={content} onChange={(e) => setContent(e.target.value)} />
+                        </div>
                         <div>
                             {/* 별점 입력 */}
                             <p>별점을 입력하세요 : </p>

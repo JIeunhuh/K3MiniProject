@@ -6,6 +6,8 @@ import FoodComm from "./Community(SignUp&In)/FoodComm";
 import Joinus from './Community(SignUp&In)/Joinus';
 import Login from "./Community(SignUp&In)/Login";
 import { useState, useEffect } from 'react';
+import Write from "./Community(SignUp&In)/Write";
+import PostDetail from "./Community(SignUp&In)/PostDetail";
 
 
 
@@ -40,6 +42,8 @@ const FoodSearch = () => {
                     <Route path='/find' element={locations && <FoodFind locations={locations} />} />
                     {/* community page */}
                     <Route path='/comm' element={<FoodComm />} />
+                    <Route path="/write" element={<Write />} />
+                    <Route path="/post/:id" element={<PostDetail />} />
                 </Routes>
             </main>
             <Routes>

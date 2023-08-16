@@ -1,23 +1,29 @@
-.star {
+.star1 {
     position: absolute;
     display: flex;
     z-index: 1;
-    width: 273px;
-    height: 257px;
-    transform: rotate(-26.944deg);
+    /* width: 273px;
+    height: 257px; */
+    /* transform: rotate(-26.944deg); */
     flex-shrink: 0;
+    margin-left: 0;
 }
-
+.star2{
+    position : absolute;
+    display: flex;
+    z-index: 1;
+}
 .commBox {
-    /* position: relative; */
-    display: inline-block;
+    position: relative;
+    z-index: -1;
+    display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .comm_rec1 {
-    display: flex;
+    position: relative;
+    display: block;
     align-items: center;
     justify-content: center;
     width: 1400px;
@@ -28,6 +34,11 @@
 }
 
 .comm_rec2 {
+    position: relative;
+    margin-top: 9%;
+    margin-left: 10.5%;
+    align-items: center;
+    justify-content: center;
     width: 1100px;
     height: 650px;
     flex-shrink: 0;
@@ -57,8 +68,30 @@
 
 /* write Btn */
 .writeBtn {
+    margin-top: 2%;
     border-radius: 10px;
     flex-shrink: 0;
     width: 81px;
-height: 37px;
+    height: 37px;
+    margin-left: 10%;
+    border: 1px dashed #B2B7FF;
+}
+
+/* paging */
+.paging {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.page {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.currentPage {
+    margin: 0 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: blue;
 }
