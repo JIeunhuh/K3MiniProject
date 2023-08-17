@@ -56,7 +56,7 @@
 | 음식점 상세조회 페이지   |  커뮤니티 메인 페이지   |  
 | :-------------------------------------------: | :------------: |
 | <img width="250" src="![modal](https://github.com/JIeunhuh/K3MiniProject/assets/112235808/7d0a72f9-5190-45b3-8787-5928d558d495.png)"/>   |  <img width="250" src="![foodcomm](https://github.com/JIeunhuh/K3MiniProject/assets/112235808/846cb092-900a-42ed-b87e-24f3993e6005.png)"/>     |
-
+<img src="https://github.com/JIeunhuh/K3MiniProject/blob/main/foodSearchPage.png">
 
 ## 8. 기능 구현 - BE
 
