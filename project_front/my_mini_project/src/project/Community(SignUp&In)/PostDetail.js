@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
-import { useRecoilValue} from 'recoil';
-import {nicknameState} from '../LoginRecoil';
+import { useRecoilValue } from 'recoil';
+import { nicknameState } from '../LoginRecoil';
 import { useEffect, useState } from 'react';
 import styles from './Community.module.css';
 import axios from 'axios';
@@ -42,19 +42,30 @@ const PostDetail = () => {
     };
 
 
-    return (
+    return (<main>
+        <span className={styles.star1}>
+            <img src='./images/comm_back1.png' /></span>
         <div className={styles.commBox}>
             <div className={styles.comm_rec1}>
                 <div className={styles.comm_rec2}>
                     <h2>{post.title}</h2>
+                    <p>작성자 : {post.nickname}</p>
+                    <br />
+                    <p style={{ color: '#747480' }}><strong>Content</strong></p>
                     <p>{post.content}</p>
                     <div className={styles.deleteBtn}>
                         {nickname == post.nickname ? <button onClick={deletePost}>Delete</button> : ''}
                     </div>
                 </div>
-                <Link to='/comm'>Return to List</Link>
+                <Link to='/comm' style={{ marginLeft: '10%' }}>Return to List</Link>
+                <span>
+                    <img className={styles.star2}
+                        src='./images/comm_back2.svg' />
+                </span>
+               
             </div>
         </div>
+    </main>
     );
 };
 export default PostDetail;

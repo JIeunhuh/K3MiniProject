@@ -8,14 +8,15 @@
     flex-shrink: 0;
     margin-left: 0;
 }
-.star2{
-    position : absolute;
+
+.star2 {
+    position: absolute;
     display: flex;
     z-index: 1;
 }
+
 .commBox {
     position: relative;
-    z-index: -1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,6 +32,7 @@
     flex-shrink: 0;
     border: 3px dashed #B2B7FF;
     background: #FFDEDE;
+
 }
 
 .comm_rec2 {
@@ -44,6 +46,7 @@
     flex-shrink: 0;
     border: 2px dashed #606579;
     background: #F5F5F5;
+
 }
 
 .comm_back2 {
@@ -71,10 +74,33 @@
     margin-top: 2%;
     border-radius: 10px;
     flex-shrink: 0;
-    width: 81px;
+    width: 88px;
     height: 37px;
     margin-left: 10%;
     border: 1px dashed #B2B7FF;
+}
+
+/* write post */
+.writeBox{
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 100px;
+}
+
+.content {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
 }
 
 /* paging */
