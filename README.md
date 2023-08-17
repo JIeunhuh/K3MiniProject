@@ -61,6 +61,10 @@
 | :-------------------------------------------: | :------------: |
 | <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/blob/main/foodSearch-modal.png"/>   |  <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/blob/main/commPage.png"/>     |
 
+| 커뮤니티 게시글 상세 페이지  |  게시글 삭제 기능   |  
+| :-------------------------------------------: | :------------: |
+| <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/assets/112235808/3d919775-263f-45b5-a440-dc277436024e"/>   |  <img width="450" src="[https://github.com/JIeunhuh/K3MiniProject/assets/112235808/8039534f-9ea1-47d4-9829-35800b50f135.png](https://github.com/JIeunhuh/K3MiniProject/assets/112235808/3f33534d-7987-4c57-88a2-d29db73773a1)"/>     |
+
 | 회원가입 페이지  |  로그인 페이지   |  
 | :-------------------------------------------: | :------------: |
 | <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/assets/112235808/a00d125f-31f7-4d98-a3db-91048ad003e9.png"/>   |  <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/assets/112235808/8039534f-9ea1-47d4-9829-35800b50f135.png"/>     |
