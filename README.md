@@ -50,12 +50,12 @@
 ## 7. 화면 구성 (개발 화면에 대한 내용) - FE 
 | 메인 페이지  |  음식점 조회 페이지   |
 | :-------------------------------------------: | :------------: |
-|  <img width="329" src="![mainPage](https://github.com/JIeunhuh/K3MiniProject/assets/112235808/fa727d02-e1f1-45e6-84c4-99077b5d612f.png)
-/> |  <img width="329" src="![foodSearchPage](https://github.com/JIeunhuh/K3MiniProject/assets/112235808/74ca0815-100c-43c7-80d4-a4f507cc31a7,png)"/>|  
+|  <img width="250" src="![mainPage](https://github.com/JIeunhuh/K3MiniProject/assets/112235808/fa727d02-e1f1-45e6-84c4-99077b5d612f.png)
+/> |  <img width="250" src="![foodSearchPage](https://github.com/JIeunhuh/K3MiniProject/assets/112235808/74ca0815-100c-43c7-80d4-a4f507cc31a7,png)"/>|  
 
 | 음식점 상세조회 페이지   |  커뮤니티 메인 페이지   |  
 | :-------------------------------------------: | :------------: |
-| <img width="329" src="![foodSearch-modal](https://github.com/JIeunhuh/K3MiniProject/assets/112235808/7d0a72f9-5190-45b3-8787-5928d558d495.png)"/>   |  <img width="329" src="![commPage](https://github.com/JIeunhuh/K3MiniProject/assets/112235808/846cb092-900a-42ed-b87e-24f3993e6005.png)"/>     |
+| <img width="250" src="![foodSearch-modal](https://github.com/JIeunhuh/K3MiniProject/assets/112235808/7d0a72f9-5190-45b3-8787-5928d558d495.png)"/>   |  <img width="250" src="![commPage](https://github.com/JIeunhuh/K3MiniProject/assets/112235808/846cb092-900a-42ed-b87e-24f3993e6005.png)"/>     |
 
 
 ## 8. 기능 구현 - BE
