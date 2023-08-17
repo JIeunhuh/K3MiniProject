@@ -29,8 +29,10 @@
 더불어, 사용자들이 식당을 평가하고 리뷰를 작성할 수 있는 리뷰 게시판과 자유롭게 소통할 수 있는 커뮤니티 게시판을 추가하여, 사용자들에게 더욱 편리하고 유용한 웹사이트를 제공하였다. 
 
 ## 5. 시작가이드(요구사항,설치 및 실행)
-
+- React
+- Node js
 - Spring Boot Version : (v2.7.12)
+- My SQL 
 
 ## 6. 기술 스택
 
@@ -50,12 +52,11 @@
 ## 7. 화면 구성 - FE 
 | 메인 페이지  |  음식점 조회 페이지   |
 | :-------------------------------------------: | :------------: |
-|  <img width="379px" src="https://github.com/JIeunhuh/K3MiniProject/blob/main/mainPage.png"/> |  <img width="379" src="https://github.com/JIeunhuh/K3MiniProject/blob/main/foodSearchPage.png"/>|  
+|  <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/blob/main/mainPage.png"/> |  <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/blob/main/foodSearchPage.png"/>|  
 
 | 음식점 상세조회 페이지   |  커뮤니티 메인 페이지   |  
 | :-------------------------------------------: | :------------: |
-| <img width="379" src="https://github.com/JIeunhuh/K3MiniProject/blob/main/foodSearch-modal.png"/>   |  <img width="379" src="https://github.com/JIeunhuh/K3MiniProject/blob/main/commPage.png"/>     |
-<img src="https://github.com/JIeunhuh/K3MiniProject/blob/main/foodSearchPage.png">
+| <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/blob/main/foodSearch-modal.png"/>   |  <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/blob/main/commPage.png"/>     |
 
 ## 8. 기능 구현 - BE
 
