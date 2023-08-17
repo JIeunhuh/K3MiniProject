@@ -15,10 +15,11 @@
 [프로젝트 소개](#4-프로젝트-소개)  
 [시작가이드](#5-시작가이드요구사항설치-및-실행)  
 [기술 스택](#6-기술-스택)  
-[Front End](#7-화면-구성-개발-화면에-대한-내용---fe)  
-[Back End](#8-기능-구현---be)  
-[주요기능](#9-주요-기능-📦)  
-[아키텍처](#10-아키텍쳐)
+[초기 설계도](#7-초기-설계도)
+[Front End](#8-화면-구성-개발-화면에-대한-내용---fe)  
+[Back End](#9-기능-구현---be)  
+[주요기능](#10-주요-기능-📦)  
+[아키텍처](#11-아키텍쳐)
 
 ## 4. 프로젝트 소개 📢
 
@@ -48,8 +49,10 @@
 ![SpringBoot](https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
 ![MySQL](https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
+## 7. 초기 설계도
+<img src="https://github.com/JIeunhuh/K3MiniProject/assets/112235808/35aee4bf-c793-4fa4-9df6-7a5f1923e3c3.png"/>
 
-## 7. 화면 구성 - FE 
+## 8. 화면 구성 - FE 
 | 메인 페이지  |  음식점 조회 페이지   |
 | :-------------------------------------------: | :------------: |
 |  <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/blob/main/mainPage.png"/> |  <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/assets/112235808/e2ea4914-4d51-4f5c-8c41-a2d9cc964600.png"/>|  
@@ -62,7 +65,7 @@
 | :-------------------------------------------: | :------------: |
 | <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/assets/112235808/a00d125f-31f7-4d98-a3db-91048ad003e9.png"/>   |  <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/assets/112235808/8039534f-9ea1-47d4-9829-35800b50f135.png"/>     |
 
-## 8. 기능 구현 - BE
+## 9. 기능 구현 - BE
 
 - JWT 로그인 기능
 - 회원가입 기능
@@ -70,7 +73,7 @@
 - 식당 데이터 제공
 - 상세 개발 내용 → [바로가기](https://github.com/JIeunhuh/K3MiniProject/tree/back)
 
-## 9. 주요 기능 📦
+## 10. 주요 기능 📦
 
 ### ⭐️ 회원가입/로그인 기능 구현
 - front에서 user 정보를 Back-End로 전송하면 데이터베이스에 해당 유저 정보를 추가함
@@ -92,7 +95,7 @@
 - 게시글 작성 기능 구현(회원인 경우에만 작성가능)
 - 게시글 삭제 기능(본인 글만 삭제 가능)
 
-## 10. 아키텍쳐 💻
+## 11. 아키텍쳐 💻
 
 ```bash
 📦src
