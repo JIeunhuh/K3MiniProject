@@ -52,7 +52,7 @@
 ## 7. 화면 구성 - FE 
 | 메인 페이지  |  음식점 조회 페이지   |
 | :-------------------------------------------: | :------------: |
-|  <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/blob/main/mainPage.png"/> |  <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/blob/main/foodSearchPage.png"/>|  
+|  <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/blob/main/mainPage.png"/> |  <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/assets/112235808/e2ea4914-4d51-4f5c-8c41-a2d9cc964600.png"/>|  
 
 | 음식점 상세조회 페이지   |  커뮤니티 메인 페이지   |  
 | :-------------------------------------------: | :------------: |
