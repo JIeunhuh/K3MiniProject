@@ -56,15 +56,20 @@ const Write = () => {
 
     return (
 
-        <div className={`${styles.commBox} container`}>
+        <div className={`${styles.commBox}`}>
             <div className={styles.comm_rec1}>
                 <div className={styles.comm_rec2}>
-                    <h2>글쓰기</h2>
-                    <input type="text" placeholder="Title" value={title} onChange={handleTitleChange} />
-                    <textarea placeholder="Content" value={content} onChange={handleContentChange} />
-                    <button onClick={handleSubmit}>작성 완료</button>
+                    <h2>Write Posting</h2>
+
+                    <div className={styles.title}>
+                        <input type="text" placeholder="Title" value={title} onChange={handleTitleChange} />
+                    </div>
+                    <div className={styles.content}>
+                        <textarea placeholder="Content" value={content} onChange={handleContentChange} /></div>
+                    <button onClick={handleSubmit} className={styles.writeBtn}>작성 완료</button>
                 </div>
             </div>
+
         </div>
 
     );

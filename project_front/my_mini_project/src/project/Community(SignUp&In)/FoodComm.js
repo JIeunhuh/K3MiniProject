@@ -5,7 +5,8 @@ import { isLoggedInState } from '../LoginRecoil';
 import { useEffect, useState } from 'react';
 import styles from './Community.module.css'
 import style from './Login.module.css';
-import Write from './Write';
+import FoodNav from '../FoodNav';
+
 // community 상단에는 login / join us 구현하기
 const FoodComm = () => {
 
@@ -57,7 +58,9 @@ const FoodComm = () => {
 
     // 게시글 클릭하면 detailpost로 이동
     const clickPage = (row) => {
+        console.log('click', row);
         navigate(`/post/${row.seq}`, { state: { post: row } });
+    
     };
 
     useEffect(() => {
@@ -126,10 +129,11 @@ const FoodComm = () => {
                 <Link to={'/joinus'}>Join us</Link>
                 {/* 토큰값 있으면 로그아웃, 없으면 로그인 뜨게 */}
                 {isLoggedIn != null ? <button type='button' className={`${style.logoutBtn}`} onClick={handleLogout}>Logout</button> : <Link to={'/login'} onClick={handleLogin}>Login</Link>}
+                <FoodNav/>
             </div>
 
-            <div className={styles.star1}>
-                <img src='./images/comm_back1.png' /></div>
+            <span className={styles.star1}>
+                <img src='./images/comm_back1.png' /></span>
             <div className={styles.commBox}>
                 <div className={styles.comm_rec1}>
                     <div>
@@ -152,14 +156,15 @@ const FoodComm = () => {
                         </div>
                     </div>
                 </div>
-                <div>
+                <span>
                     <img className={styles.star2}
                         src='./images/comm_back2.svg' />
-                </div>
+                </span>
                 <div>
                     <img className={styles.hearts} src='./images/hearts.svg' />
                 </div>
             </div>
+           
         </main>
     );
 }
