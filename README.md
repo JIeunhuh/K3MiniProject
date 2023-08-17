@@ -47,7 +47,7 @@
 ![MySQL](https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
 
-## 7. 화면 구성 (개발 화면에 대한 내용) - FE 
+## 7. 화면 구성 - FE 
 | 메인 페이지  |  음식점 조회 페이지   |
 | :-------------------------------------------: | :------------: |
 |  <img width="250" src="![mainPage](https://github.com/JIeunhuh/K3MiniProject/assets/112235808/fa727d02-e1f1-45e6-84c4-99077b5d612f.png)
