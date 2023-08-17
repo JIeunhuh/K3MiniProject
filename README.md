@@ -20,7 +20,7 @@
 [주요기능](#9-주요-기능-📦)  
 [아키텍처](#10-아키텍쳐)
 
-## 4. 프로젝트 소개
+## 4. 프로젝트 소개 📢
 
 외식업이 우후죽순 발전하고 있는 요즘, 식당 위생이 청결하지 못한 곳은 사람들이 선호 하지 않는다. 
 
@@ -29,10 +29,12 @@
 더불어, 사용자들이 식당을 평가하고 리뷰를 작성할 수 있는 리뷰 게시판과 자유롭게 소통할 수 있는 커뮤니티 게시판을 추가하여, 사용자들에게 더욱 편리하고 유용한 웹사이트를 제공하였다. 
 
 ## 5. 시작가이드(요구사항,설치 및 실행)
-
+- React
+- Node js
 - Spring Boot Version : (v2.7.12)
+- My SQL 
 
-## 6. 기술 스택
+## 6. 기술 스택 🏆
 
 ### Environment
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white)
@@ -47,14 +49,18 @@
 ![MySQL](https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
 
-## 7. 화면 구성 (개발 화면에 대한 내용) - FE 
+## 7. 화면 구성 - FE 
 | 메인 페이지  |  음식점 조회 페이지   |
 | :-------------------------------------------: | :------------: |
-|  <img width="329" src="![mainpage](mainPage.png)"/> |  <img width="329" src="![foodsearch](foodSearchPage.png)"/>|  
+|  <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/blob/main/mainPage.png"/> |  <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/assets/112235808/e2ea4914-4d51-4f5c-8c41-a2d9cc964600.png"/>|  
 
 | 음식점 상세조회 페이지   |  커뮤니티 메인 페이지   |  
-| <img width="329" src="![Alt text](foodSearch-modal.png)"/>   |  <img width="329" src="![Alt text](commPage.png)"/>     |
+| :-------------------------------------------: | :------------: |
+| <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/blob/main/foodSearch-modal.png"/>   |  <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/blob/main/commPage.png"/>     |
 
+| 회원가입 페이지  |  로그인 페이지   |  
+| :-------------------------------------------: | :------------: |
+| <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/assets/112235808/a00d125f-31f7-4d98-a3db-91048ad003e9.png"/>   |  <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/assets/112235808/8039534f-9ea1-47d4-9829-35800b50f135.png"/>     |
 
 ## 8. 기능 구현 - BE
 
@@ -86,13 +92,13 @@
 - 게시글 작성 기능 구현(회원인 경우에만 작성가능)
 - 게시글 삭제 기능(본인 글만 삭제 가능)
 
-## 10. 아키텍쳐
+## 10. 아키텍쳐 💻
 
 ```bash
 📦src
  ┣ 📂project
  ┃ ┣ 📂Community(SignUp&In) 
- ┃ ┃ ┣ 📜Community.js 
+ ┃ ┃ ┣ 📜Community.js : x
  ┃ ┃ ┣ 📜Community.module.css
  ┃ ┃ ┣ 📜FoodComm.js : 커뮤니티 메인 페이지(게시글 전체목록 조회)
  ┃ ┃ ┣ 📜Joinus.js : 회원가입 페이지
@@ -102,8 +108,8 @@
  ┃ ┃ ┗ 📜Write.js : 포스팅 
  ┃ ┣ 📂Search_RestaurantLists
  ┃ ┃ ┣ 📜FoodFind.js : 메인 음식점 조회 페이지
- ┃ ┃ ┣ 📜FoodInfo.js : 
- ┃ ┃ ┣ 📜FoodInfo_jpt.js
+ ┃ ┃ ┣ 📜FoodInfo.js : 음식점 상세 조회(모달) , 리뷰 작성 페이지
+ ┃ ┃ ┣ 📜FoodInfo_jpt.js : x
  ┃ ┃ ┣ 📜Modal.module.css
  ┃ ┃ ┣ 📜Mymap.js : 지도 표시 (kakao map api 호출)
  ┃ ┃ ┣ 📜SearchList.js : 지역/키워드 선택후, 검색된 음식점 조회
