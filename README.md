@@ -58,6 +58,10 @@
 | :-------------------------------------------: | :------------: |
 | <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/blob/main/foodSearch-modal.png"/>   |  <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/blob/main/commPage.png"/>     |
 
+| 회원가입 페이지  |  로그인 페이지   |  
+| :-------------------------------------------: | :------------: |
+| <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/assets/112235808/a00d125f-31f7-4d98-a3db-91048ad003e9.png"/>   |  <img width="450" src="https://github.com/JIeunhuh/K3MiniProject/assets/112235808/8039534f-9ea1-47d4-9829-35800b50f135.png"/>     |
+
 ## 8. 기능 구현 - BE
 
 - JWT 로그인 기능
