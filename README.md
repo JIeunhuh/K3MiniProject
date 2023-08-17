@@ -98,7 +98,7 @@
 📦src
  ┣ 📂project
  ┃ ┣ 📂Community(SignUp&In) 
- ┃ ┃ ┣ 📜Community.js 
+ ┃ ┃ ┣ 📜Community.js : x
  ┃ ┃ ┣ 📜Community.module.css
  ┃ ┃ ┣ 📜FoodComm.js : 커뮤니티 메인 페이지(게시글 전체목록 조회)
  ┃ ┃ ┣ 📜Joinus.js : 회원가입 페이지
@@ -108,8 +108,8 @@
  ┃ ┃ ┗ 📜Write.js : 포스팅 
  ┃ ┣ 📂Search_RestaurantLists
  ┃ ┃ ┣ 📜FoodFind.js : 메인 음식점 조회 페이지
- ┃ ┃ ┣ 📜FoodInfo.js : 
- ┃ ┃ ┣ 📜FoodInfo_jpt.js
+ ┃ ┃ ┣ 📜FoodInfo.js : 음식점 상세 조회(모달) , 리뷰 작성 페이지
+ ┃ ┃ ┣ 📜FoodInfo_jpt.js : x
  ┃ ┃ ┣ 📜Modal.module.css
  ┃ ┃ ┣ 📜Mymap.js : 지도 표시 (kakao map api 호출)
  ┃ ┃ ┣ 📜SearchList.js : 지역/키워드 선택후, 검색된 음식점 조회
