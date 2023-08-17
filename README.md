@@ -20,7 +20,7 @@
 [주요기능](#9-주요-기능-📦)  
 [아키텍처](#10-아키텍쳐)
 
-## 4. 프로젝트 소개
+## 4. 프로젝트 소개 📢
 
 외식업이 우후죽순 발전하고 있는 요즘, 식당 위생이 청결하지 못한 곳은 사람들이 선호 하지 않는다. 
 
@@ -34,7 +34,7 @@
 - Spring Boot Version : (v2.7.12)
 - My SQL 
 
-## 6. 기술 스택
+## 6. 기술 스택 🏆
 
 ### Environment
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?style=for-the-badge&logo=Visual%20Studio%20Code&logoColor=white)
@@ -92,7 +92,7 @@
 - 게시글 작성 기능 구현(회원인 경우에만 작성가능)
 - 게시글 삭제 기능(본인 글만 삭제 가능)
 
-## 10. 아키텍쳐
+## 10. 아키텍쳐 💻
 
 ```bash
 📦src
