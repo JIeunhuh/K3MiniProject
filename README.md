@@ -50,7 +50,7 @@
 ## 7. 화면 구성 (개발 화면에 대한 내용) - FE 
 | 메인 페이지  |  음식점 조회 페이지   |
 | :-------------------------------------------: | :------------: |
-|  <img width="329" src="![mainpage](mainPage.png)"/> |  <img width="329" src="![foodsearch](foodSearchPage.png)"/>|  
+|  <img width="329" src="![mainPage](https://github.com/JIeunhuh/K3MiniProject/assets/112235808/57a821cd-e4a5-46c0-83b3-0ec91404fc2f)"/> |  <img width="329" src="![foodsearch](foodSearchPage.png)"/>|  
 
 | 음식점 상세조회 페이지   |  커뮤니티 메인 페이지   |  
 | <img width="329" src="![Alt text](foodSearch-modal.png)"/>   |  <img width="329" src="![Alt text](commPage.png)"/>     |
