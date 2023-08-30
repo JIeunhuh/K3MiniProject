@@ -7,7 +7,7 @@
 
 |      Front - End       |          Back - End         |                                                               
 | :------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------: | 
-|<img width="120" alt="image" src="https://avatars.githubusercontent.com/u/112235808?v=4">|<img width="120" alt="image" src="https://avatars.githubusercontent.com/u/112235808?v=4">(https://avatars.githubusercontent.com/u/70638717?v=4)|
+|<img width="120" alt="image" src="https://avatars.githubusercontent.com/u/112235808?v=4">|<img width="120" alt="image" src="https://avatars.githubusercontent.com/u/70638717?v=4">|
 |   [@JIeunhuh](https://github.com/JIeunhuh)   |    [@sou05091](https://github.com/sou05091)  |
 | 허지은 | 김민범 |
 
