@@ -16,8 +16,8 @@
 [시작가이드](#5-시작가이드요구사항설치-및-실행)  
 [기술 스택](#6-기술-스택)  
 [ERD](#7-ERD)
-[REST API](#8-REST API 설계)
-[Front End](#9-화면-구성-개발-화면에-대한-내용---fe)  
+[REST API](#8-REST-API-설계)
+[Front End](#9-화면-구성-fe)  
 [Back End](#10-기능-구현---be)  
 [주요기능](#11-주요-기능-📦)  
 [아키텍처](#12-아키텍쳐)
@@ -54,7 +54,9 @@
 <img src="https://github.com/JIeunhuh/K3MiniProject/assets/112235808/081a616c-4544-4b29-9aea-eb929b45c7d0"/>
 
 ## 8. REST API 설계
-<img src="https://github.com/JIeunhuh/K3MiniProject/assets/112235808/2540978b-8465-44e5-95ac-ff85572d2e2c"/>
+<img src="https://github.com/JIeunhuh/K3MiniProject/assets/112235808/2540978b-8465-44e5-95ac-ff85572d2e2c"/>  
+  
+
 ## 9. 화면 구성 - FE 
 | 메인 페이지  |  음식점 조회 페이지   |
 | :-------------------------------------------: | :------------: |
